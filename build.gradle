@@ -15,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle'
 
 
 version = '1.0'
-group = 'com.yourname.battlemage'
+group = 'io.github.aradoryin.battlemage'
 archivesBaseName = 'battlemage'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
