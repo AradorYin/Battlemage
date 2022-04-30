@@ -1,4 +1,5 @@
 package io.github.aradoryin.battlemage;
+import io.github.aradoryin.battlemage.init.BlockInit;
 import io.github.aradoryin.battlemage.init.ItemInit;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -30,6 +31,7 @@ public class Battlemage
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		
 		ItemInit.ITEMS.register(bus);
+		BlockInit.BLOCKS.register(bus);
 		
 		MinecraftForge.EVENT_BUS.register(this);
 	}
