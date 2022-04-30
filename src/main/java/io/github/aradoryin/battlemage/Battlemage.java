@@ -15,6 +15,34 @@ public class Battlemage
 {
 	
 	public static final String MOD_ID = "battlemage";
+	
+	/*
+	 * Enum Runes:
+	 * -> Shield
+	 * -> Dash
+	 * -> Targeted
+	 * -> Lobbed
+	 * -> Ray
+	 * -> AoE
+	 * -> Trap
+	 * -> Pool
+	 * 
+	 * Enum Augments:
+	 * -> Control
+	 * -> Mastery
+	 * -> Destruction
+	 * 
+	 * Enum Elements:
+	 * -> Fire > Destruction
+	 * -> Ice > Control
+	 * -> Lightning > Mastery
+	 * -> Kinesis > Control
+	 * -> Corruption > Mastery
+	 * -> Necromancy > Destruction
+	 * -> Delirium > Mastery
+	 * -> Phase > Control
+	 * -> Earth > Destruction
+	 */
 
 	public static final CreativeModeTab BATTLEMAGE_TAB = new CreativeModeTab(MOD_ID)
 	{

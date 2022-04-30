@@ -31,6 +31,53 @@ public class BlockInit
 					.sound(SoundType.METAL)
 					.requiresCorrectToolForDrops()), object -> 
 			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+			
+	/*
+	 * List of BLOCKS to implement:
+	 * 
+	 * >Amethyst Block
+	 * -> Based on quality of GemType.QUALITY used to make
+	 * 
+	 * >Diamond Block
+	 * -> Based on quality of GemType.QUALITY used to make
+	 * 
+	 * >Emerald Block
+	 * -> Based on quality of GemType.QUALITY used to make
+	 * 
+	 * >Quartz Block
+	 * -> Based on quality of GemType.QUALITY used to make
+	 * 
+	 * >Ruby Block
+	 * -> Based on quality of GemType.QUALITY used to make
+	 * >Ruby Ore
+	 * -> Normal Break: Drops Ruby Gem
+	 * -> Fortune: 1 -> Chance of 2 | 2 -> Chance of 3 | 3 -> Chance of 4
+	 * -> Silk Touch: Drops Ruby Ore Block
+	 * 
+	 * >Sapphire Block
+	 * -> Based on quality of GemType.QUALITY used to make
+	 * >Sapphire Ore
+	 * -> Normal Break: Drops Sapphire Gem
+	 * -> Fortune: 1 -> Chance of 2 | 2 -> Chance of 3 | 3 -> Chance of 4
+	 * -> Silk Touch: Drops Sapphire Ore Block
+	 * 
+	 * >Tiger's Eye Block
+	 * -> Based on quality of GemType.QUALITY used to make
+	 * >Tiger's Eye Ore
+	 * -> Normal Break: Drops Tiger's Eye Gem
+	 * -> Fortune: 1 -> Chance of 2 | 2 -> Chance of 3 | 3 -> Chance of 4
+	 * -> Silk Touch: Drops Tiger's Eye Ore Block
+	 * 
+	 * >Aether-Infused Log
+	 * >Aether-Infused Plank
+	 * >Aether-Infused Wood
+	 * >Aether-Infused Leaves
+	 * >Aether-Infused Sapling
+	 * 
+	 * >Aether-Infused Stone
+	 * 
+	 * >Aether-Infused Obsidian
+	 */
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block)
 	{
