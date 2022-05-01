@@ -1,12 +1,10 @@
 package io.github.aradoryin.battlemage.init;
 import java.util.function.Function;
 
-import org.antlr.v4.parse.ANTLRParser.finallyClause_return;
-import org.apache.commons.compress.harmony.pack200.NewAttribute;
-
 import com.google.common.base.Supplier;
 
 import io.github.aradoryin.battlemage.Battlemage;
+import io.github.aradoryin.battlemage.block.ExampleBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
@@ -26,7 +24,7 @@ public class BlockInit
 	public static final DeferredRegister<Item> ITEMS = ItemInit.ITEMS;
 	
 	public static final RegistryObject<Block> EXAMPLE_BLOCK = register("example_block", 
-			()-> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE)
+			()-> new ExampleBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE)
 					.strength(3.0f)
 					.sound(SoundType.METAL)
 					.requiresCorrectToolForDrops()), object -> 
