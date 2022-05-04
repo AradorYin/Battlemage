@@ -44,6 +44,8 @@ public class ModItemModelProvider extends ItemModelProvider
 	{
 		//Block Items
 		simpleBlockItem(BlockInit.EXAMPLE_BLOCK.get().asItem());
+		simpleBlockItem(BlockInit.EXAMPLE_ORE.get().asItem());
+		simpleBlockItem(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
 		
 		//Simple Items
 		oneLayerItem(ItemInit.EXAMPLE_ITEM.get());

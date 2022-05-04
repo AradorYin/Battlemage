@@ -15,6 +15,7 @@ public class TagInit
 	{
 
 		public static final TagKey<Block> EXAMPLE_BLOCK = mod("example_block");
+		public static final TagKey<Block> EXAMPLE_ORE = mod("example_ore");
 		
 		private static TagKey<Block> mod(String path)
 		{

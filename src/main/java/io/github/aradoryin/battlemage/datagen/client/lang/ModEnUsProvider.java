@@ -25,6 +25,8 @@ public class ModEnUsProvider extends LanguageProvider
 		
 		//BLOCKS
 		add(BlockInit.EXAMPLE_BLOCK.get(), "Example Block");
+		add(BlockInit.EXAMPLE_ORE.get(), "Example Ore");
+		add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get(), "Deepslate Example Ore");
 	}
 
 }

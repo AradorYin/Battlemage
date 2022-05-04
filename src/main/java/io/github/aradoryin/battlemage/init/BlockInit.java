@@ -30,6 +30,19 @@ public class BlockInit
 					.requiresCorrectToolForDrops()), object -> 
 			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
 			
+	public static final RegistryObject<Block> EXAMPLE_ORE = register("example_ore", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.METAL)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+	public static final RegistryObject<Block> DEEPSLATE_EXAMPLE_ORE = register("deepslate_example_ore", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.DEEPSLATE)
+					.requiresCorrectToolForDrops()), object ->
+			()-> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+			
 	/*
 	 * List of BLOCKS to implement:
 	 * 

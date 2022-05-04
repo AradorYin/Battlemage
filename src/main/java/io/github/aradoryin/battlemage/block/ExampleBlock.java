@@ -22,6 +22,7 @@ public class ExampleBlock extends Block
 	@Override
 	public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player,
 			InteractionHand hand, BlockHitResult result)
+	
 	{
 
 		if(!world.isClientSide())

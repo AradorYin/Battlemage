@@ -18,6 +18,8 @@ public class ModBlockStateProvider extends BlockStateProvider
 	protected void registerStatesAndModels()
 	{
 		simpleBlock(BlockInit.EXAMPLE_BLOCK.get());
+		simpleBlock(BlockInit.EXAMPLE_ORE.get());
+		simpleBlock(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
 	}
 	
 }
