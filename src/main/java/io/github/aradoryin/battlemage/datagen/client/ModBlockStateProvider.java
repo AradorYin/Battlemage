@@ -17,9 +17,26 @@ public class ModBlockStateProvider extends BlockStateProvider
 	@Override
 	protected void registerStatesAndModels()
 	{
+		//EXAMPLE BLOCKS
 		simpleBlock(BlockInit.EXAMPLE_BLOCK.get());
 		simpleBlock(BlockInit.EXAMPLE_ORE.get());
 		simpleBlock(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
+		
+		//BLOCKS
+		simpleBlock(BlockInit.ONYX_BLOCK.get());
+		simpleBlock(BlockInit.RUBY_BLOCK.get());
+		simpleBlock(BlockInit.SAPPHIRE_BLOCK.get());
+		simpleBlock(BlockInit.TIGERS_EYE_BLOCK.get());
+		
+		//ORES
+		simpleBlock(BlockInit.ONYX_ORE.get());
+		simpleBlock(BlockInit.ONYX_ORE_DEEPSLATE.get());
+		simpleBlock(BlockInit.RUBY_ORE.get());
+		simpleBlock(BlockInit.RUBY_ORE_DEEPSLATE.get());
+		simpleBlock(BlockInit.SAPPHIRE_ORE.get());
+		simpleBlock(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get());
+		simpleBlock(BlockInit.TIGERS_EYE_ORE.get());
+		simpleBlock(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get());
 	}
 	
 }

@@ -43,12 +43,53 @@ public class ModItemModelProvider extends ItemModelProvider
 	protected void registerModels()
 	{
 		//Block Items
+		//EXAMPLE BLOCKS
 		simpleBlockItem(BlockInit.EXAMPLE_BLOCK.get().asItem());
 		simpleBlockItem(BlockInit.EXAMPLE_ORE.get().asItem());
 		simpleBlockItem(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
 		
+		//BLOCK
+		simpleBlockItem(BlockInit.ONYX_BLOCK.get().asItem());
+		simpleBlockItem(BlockInit.RUBY_BLOCK.get().asItem());
+		simpleBlockItem(BlockInit.SAPPHIRE_BLOCK.get().asItem());
+		simpleBlockItem(BlockInit.TIGERS_EYE_BLOCK.get().asItem());
+		
+		//ORE
+		simpleBlockItem(BlockInit.ONYX_ORE.get().asItem());
+		simpleBlockItem(BlockInit.ONYX_ORE_DEEPSLATE.get().asItem());
+		simpleBlockItem(BlockInit.RUBY_ORE.get().asItem());
+		simpleBlockItem(BlockInit.RUBY_ORE_DEEPSLATE.get().asItem());
+		simpleBlockItem(BlockInit.SAPPHIRE_ORE.get().asItem());
+		simpleBlockItem(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get().asItem());
+		simpleBlockItem(BlockInit.TIGERS_EYE_ORE.get().asItem());
+		simpleBlockItem(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get().asItem());
+		
+		
 		//Simple Items
+		//EXAMPLE ITEMS
 		oneLayerItem(ItemInit.EXAMPLE_ITEM.get());
+		
+		//ITEM GEM
+		oneLayerItem(ItemInit.RUBY.get());
+		oneLayerItem(ItemInit.ONYX.get());
+		oneLayerItem(ItemInit.SAPPHIRE.get());
+		oneLayerItem(ItemInit.TIGERS_EYE.get());
+		
+		//ITEM ELEMENTAL CORE
+		oneLayerItem(ItemInit.FIRE_CORE.get());
+		oneLayerItem(ItemInit.ICE_CORE.get());
+		oneLayerItem(ItemInit.PHASE_CORE.get());
+		oneLayerItem(ItemInit.EARTH_CORE.get());
+		oneLayerItem(ItemInit.KINESIS_CORE.get());
+		oneLayerItem(ItemInit.DELIRIUM_CORE.get());
+		oneLayerItem(ItemInit.LIGHTNING_CORE.get());
+		oneLayerItem(ItemInit.CORRUPTION_CORE.get());
+		oneLayerItem(ItemInit.NECROMANCY_CORE.get());
+		
+		//ITEM ELEMENTAL CORE ENGRAVED GEM
+		oneLayerItem(ItemInit.FIRE_ENGRAVED_RUBY.get());
+		oneLayerItem(ItemInit.FIRE_ENGRAVED_EMERALD.get());
+		oneLayerItem(ItemInit.FIRE_ENGRAVED_SAPPHIRE.get());
 	}
 
 	

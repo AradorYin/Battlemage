@@ -23,6 +23,8 @@ public class BlockInit
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Battlemage.MOD_ID);
 	public static final DeferredRegister<Item> ITEMS = ItemInit.ITEMS;
 	
+	// !!THIS SECTION SHOULD NOT BE OBTAINED NORMALLY!!
+	//EXAMPLE BLOCK
 	public static final RegistryObject<Block> EXAMPLE_BLOCK = register("example_block", 
 			()-> new ExampleBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE)
 					.strength(3.0f)
@@ -43,41 +45,102 @@ public class BlockInit
 					.requiresCorrectToolForDrops()), object ->
 			()-> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 			
+	
+	//BLOCK
+	public static final RegistryObject<Block> RUBY_BLOCK = register("ruby_block", 
+			()-> new ExampleBlock(BlockBehaviour.Properties.of(Material.METAL)
+					.strength(3.0f)
+					.sound(SoundType.METAL)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+	//Item Will Change based on Quality of GemType.QUALITY
+			
+	public static final RegistryObject<Block> SAPPHIRE_BLOCK = register("sapphire_block", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.METAL)
+					.strength(3.0f)
+					.sound(SoundType.METAL)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+	//Item Will Change based on Quality of GemType.QUALITY
+			
+	public static final RegistryObject<Block> ONYX_BLOCK = register("onyx_block", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.METAL)
+					.strength(3.0f)
+					.sound(SoundType.METAL)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+	//Item Will Change based on Quality of GemType.QUALITY
+			
+	public static final RegistryObject<Block> TIGERS_EYE_BLOCK = register("tigers_eye_block", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.METAL)
+					.strength(3.0f)
+					.sound(SoundType.METAL)
+					.requiresCorrectToolForDrops()), object ->
+			()-> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	//Item Will Change based on Quality of GemType.QUALITY
+	
+	
+	//ORE
+	public static final RegistryObject<Block> RUBY_ORE = register("ruby_ore", 
+			()-> new ExampleBlock(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+			
+	public static final RegistryObject<Block> RUBY_ORE_DEEPSLATE = register("ruby_ore_deepslate", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.DEEPSLATE)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+			
+	public static final RegistryObject<Block> SAPPHIRE_ORE = register("sapphire_ore", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+			
+	public static final RegistryObject<Block> SAPPHIRE_ORE_DEEPSLATE = register("sapphire_ore_deepslate", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.DEEPSLATE)
+					.requiresCorrectToolForDrops()), object ->
+			()-> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	
+	public static final RegistryObject<Block> ONYX_ORE = register("onyx_ore", 
+			()-> new ExampleBlock(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+			
+	public static final RegistryObject<Block> ONYX_ORE_DEEPSLATE = register("onyx_ore_deepslate", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.DEEPSLATE)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+			
+	public static final RegistryObject<Block> TIGERS_EYE_ORE = register("tigers_eye_ore", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), object -> 
+			()-> new BlockItem(object.get(),new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB))));
+			
+	public static final RegistryObject<Block> TIGERS_EYE_ORE_DEEPSLATE= register("tigers_eye_ore_deepslate", 
+			()-> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.DEEPSLATE)
+					.requiresCorrectToolForDrops()), object ->
+			()-> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	
+	
+	
 	/*
 	 * List of BLOCKS to implement:
-	 * 
-	 * >Amethyst Block
-	 * -> Based on quality of GemType.QUALITY used to make
-	 * 
-	 * >Diamond Block
-	 * -> Based on quality of GemType.QUALITY used to make
-	 * 
-	 * >Emerald Block
-	 * -> Based on quality of GemType.QUALITY used to make
-	 * 
-	 * >Quartz Block
-	 * -> Based on quality of GemType.QUALITY used to make
-	 * 
-	 * >Ruby Block
-	 * -> Based on quality of GemType.QUALITY used to make
-	 * >Ruby Ore
-	 * -> Normal Break: Drops Ruby Gem
-	 * -> Fortune: 1 -> Chance of 2 | 2 -> Chance of 3 | 3 -> Chance of 4
-	 * -> Silk Touch: Drops Ruby Ore Block
-	 * 
-	 * >Sapphire Block
-	 * -> Based on quality of GemType.QUALITY used to make
-	 * >Sapphire Ore
-	 * -> Normal Break: Drops Sapphire Gem
-	 * -> Fortune: 1 -> Chance of 2 | 2 -> Chance of 3 | 3 -> Chance of 4
-	 * -> Silk Touch: Drops Sapphire Ore Block
-	 * 
-	 * >Tiger's Eye Block
-	 * -> Based on quality of GemType.QUALITY used to make
-	 * >Tiger's Eye Ore
-	 * -> Normal Break: Drops Tiger's Eye Gem
-	 * -> Fortune: 1 -> Chance of 2 | 2 -> Chance of 3 | 3 -> Chance of 4
-	 * -> Silk Touch: Drops Tiger's Eye Ore Block
 	 * 
 	 * >Aether-Infused Log
 	 * >Aether-Infused Plank

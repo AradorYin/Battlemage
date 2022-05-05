@@ -17,31 +17,46 @@ public class Battlemage
 	public static final String MOD_ID = "battlemage";
 	
 	/*
-	 * Enum Runes:
-	 * -> Shield
-	 * -> Dash
-	 * -> Targeted
-	 * -> Lobbed
-	 * -> Ray
-	 * -> AoE
-	 * -> Trap
-	 * -> Pool
+	 * .json file location: client-extra.jar
+	 * forge class files location: forge-1.18.2	 */
+	
+	/*
+	 * >Blocks
+	 * ->Amethyst Block
+	 * --> Based on quality of GemType.QUALITY used to make
+	 * ->Diamond Block
+	 * --> Based on quality of GemType.QUALITY used to make
+	 * ->Emerald Block
+	 * --> Based on quality of GemType.QUALITY used to make
+	 * >Quartz Block
+	 * -> Based on quality of GemType.QUALITY used to make
 	 * 
-	 * Enum Augments:
-	 * -> Control
-	 * -> Mastery
-	 * -> Destruction
+	 * >Gems:
+	 * -> Amethyst
+	 * ---> More focused AugmentType.MASTERY spells
+	 * -> Diamond
+	 * ---> Longer lasting AugmentType.CONTROL spells
+	 * -> Emerald
+	 * ---> Longer lasting AugmentType.MASTERY spells
+	 * -> Quartz
+	 * ---> Harder Hitting AugmentType.CONTROL spells
+	 * -> Nether Star
+	 * ---> Harder Hitting AugmentType.MASTERY spells
+	 * Quality:
+	 * -> Trash < Poor < Common < Uncommon < Rare < Epic < Legendary < Unique < Mythic < Pristine
+	 * Higher chance on using/obtaining AugmentType.MASTERY elements: Amethyst | Diamond | Nether Star
+	 * Higher chance on using/obtaining AugmentType.CONTROL elements: Emerald | Quartz | Sapphire
+	 * Higher chance on using/obtaining AugmentType.DESTRUCTION elements: Ruby | Onyx | Tiger's Eye
 	 * 
-	 * Enum Elements:
-	 * -> Fire > Destruction
-	 * -> Ice > Control
-	 * -> Lightning > Mastery
-	 * -> Kinesis > Control
-	 * -> Corruption > Mastery
-	 * -> Necromancy > Destruction
-	 * -> Delirium > Mastery
-	 * -> Phase > Control
-	 * -> Earth > Destruction
+	 * >Engravings:
+	 * -> Leather
+	 * ---> Used to make Bracer
+	 * -> Phantom Membrane
+	 * ---> Used to upgrade Bracer with better control over ElementType.DELIRIUM
+	 * -> String
+	 * ---> Used to make Bracer
+	 * -> Nether Star
+	 * ---> Used to upgrade Bracer with better control over ElementType.CORRUPTION
 	 */
 
 	public static final CreativeModeTab BATTLEMAGE_TAB = new CreativeModeTab(MOD_ID)
