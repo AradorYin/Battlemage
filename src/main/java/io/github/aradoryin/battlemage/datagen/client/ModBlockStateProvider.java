@@ -30,13 +30,13 @@ public class ModBlockStateProvider extends BlockStateProvider
 		
 		//ORES
 		simpleBlock(BlockInit.ONYX_ORE.get());
-		simpleBlock(BlockInit.ONYX_ORE_DEEPSLATE.get());
+		simpleBlock(BlockInit.DEEPSLATE_ONYX_ORE.get());
 		simpleBlock(BlockInit.RUBY_ORE.get());
-		simpleBlock(BlockInit.RUBY_ORE_DEEPSLATE.get());
+		simpleBlock(BlockInit.DEEPSLATE_RUBY_ORE.get());
 		simpleBlock(BlockInit.SAPPHIRE_ORE.get());
-		simpleBlock(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get());
+		simpleBlock(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get());
 		simpleBlock(BlockInit.TIGERS_EYE_ORE.get());
-		simpleBlock(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get());
+		simpleBlock(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get());
 	}
 	
 }

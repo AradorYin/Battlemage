@@ -21,6 +21,7 @@ public class ModEnUsProvider extends LanguageProvider
 		add("itemGroup.battlemage", "Battlemage");
 		
 		//ITEM
+		//ITEM EXAMPLE
 		add(ItemInit.EXAMPLE_ITEM.get(), "Example Item");
 		
 		//ITEM GEM
@@ -45,6 +46,16 @@ public class ModEnUsProvider extends LanguageProvider
 		add(ItemInit.FIRE_ENGRAVED_EMERALD.get(), "Fire-Engraved Emerald");
 		add(ItemInit.FIRE_ENGRAVED_SAPPHIRE.get(), "Fire-Engraved Sapphire");
 		
+		//ITEM ENGRAVING
+		add(ItemInit.GOLD_POWDER.get(), "Gold Powder");
+		add(ItemInit.ICE_POWDER.get(), "Ice Powder");
+		add(ItemInit.IRON_POWDER.get(), "Iron Powder");
+		add(ItemInit.NETHERITE_POWDER.get(), "Netherite Powder");
+		
+		//ITEM
+		add(ItemInit.STONE_TABLET.get(), "Stone Tablet");
+		add(ItemInit.AETHER_INFUSED_TABLET.get(), "Aether-Infused Tablet");
+		
 		//BLOCK
 		//EXAMPLE BLOCKS
 		add(BlockInit.EXAMPLE_BLOCK.get(), "Example Block");
@@ -59,13 +70,13 @@ public class ModEnUsProvider extends LanguageProvider
 		
 		//ORES
 		add(BlockInit.ONYX_ORE.get(), "Onyx Ore");
-		add(BlockInit.ONYX_ORE_DEEPSLATE.get(), "Deepslate Onyx Ore");
+		add(BlockInit.DEEPSLATE_ONYX_ORE.get(), "Deepslate Onyx Ore");
 		add(BlockInit.RUBY_ORE.get(), "Ruby Ore");
-		add(BlockInit.RUBY_ORE_DEEPSLATE.get(), "Deepslate Ruby Ore");
+		add(BlockInit.DEEPSLATE_RUBY_ORE.get(), "Deepslate Ruby Ore");
 		add(BlockInit.SAPPHIRE_ORE.get(), "Sapphire Ore");
-		add(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get(), "Deepslate Sapphire Ore");
+		add(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get(), "Deepslate Sapphire Ore");
 		add(BlockInit.TIGERS_EYE_ORE.get(), "Tiger's Eye Ore");
-		add(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get(), "Deepslate Tiger's Eye Ore");
+		add(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get(), "Deepslate Tiger's Eye Ore");
 	}
 
 }

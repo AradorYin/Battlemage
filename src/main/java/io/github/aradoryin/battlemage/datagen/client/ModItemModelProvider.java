@@ -56,13 +56,13 @@ public class ModItemModelProvider extends ItemModelProvider
 		
 		//ORE
 		simpleBlockItem(BlockInit.ONYX_ORE.get().asItem());
-		simpleBlockItem(BlockInit.ONYX_ORE_DEEPSLATE.get().asItem());
+		simpleBlockItem(BlockInit.DEEPSLATE_ONYX_ORE.get().asItem());
 		simpleBlockItem(BlockInit.RUBY_ORE.get().asItem());
-		simpleBlockItem(BlockInit.RUBY_ORE_DEEPSLATE.get().asItem());
+		simpleBlockItem(BlockInit.DEEPSLATE_RUBY_ORE.get().asItem());
 		simpleBlockItem(BlockInit.SAPPHIRE_ORE.get().asItem());
-		simpleBlockItem(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get().asItem());
+		simpleBlockItem(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get().asItem());
 		simpleBlockItem(BlockInit.TIGERS_EYE_ORE.get().asItem());
-		simpleBlockItem(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get().asItem());
+		simpleBlockItem(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get().asItem());
 		
 		
 		//Simple Items
@@ -90,6 +90,16 @@ public class ModItemModelProvider extends ItemModelProvider
 		oneLayerItem(ItemInit.FIRE_ENGRAVED_RUBY.get());
 		oneLayerItem(ItemInit.FIRE_ENGRAVED_EMERALD.get());
 		oneLayerItem(ItemInit.FIRE_ENGRAVED_SAPPHIRE.get());
+		
+		//ITEM ENGRAVING
+		oneLayerItem(ItemInit.IRON_POWDER.get());
+		oneLayerItem(ItemInit.ICE_POWDER.get());
+		oneLayerItem(ItemInit.GOLD_POWDER.get());
+		oneLayerItem(ItemInit.NETHERITE_POWDER.get());
+		
+		//ITEM
+		oneLayerItem(ItemInit.STONE_TABLET.get());
+		oneLayerItem(ItemInit.AETHER_INFUSED_TABLET.get());
 	}
 
 	

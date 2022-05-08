@@ -108,45 +108,45 @@ public class ModRecipeProvider extends RecipeProvider
 		//Cooking Recipe
 		//EXAMPLE ORES
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.EXAMPLE_ORE.get().asItem()), ItemInit.EXAMPLE_ITEM.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.EXAMPLE_ORE.get()))
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.EXAMPLE_ORE.get()))
 			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem()), ItemInit.EXAMPLE_ITEM.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.DEEPSLATE_EXAMPLE_ORE.get()))
+			.unlockedBy("has_" + BlockInit.DEEPSLATE_EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.DEEPSLATE_EXAMPLE_ORE.get()))
 			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.DEEPSLATE_EXAMPLE_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
 		//ORES
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ONYX_ORE.get().asItem()), ItemInit.ONYX.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.ONYX_ORE.get()))
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.ONYX_ORE.get()))
 			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.ONYX_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.ONYX_ORE_DEEPSLATE.get().asItem()), ItemInit.ONYX.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.ONYX_ORE_DEEPSLATE.get()))
-			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.ONYX_ORE_DEEPSLATE.get().getRegistryName().getPath() + "_smelting"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.DEEPSLATE_ONYX_ORE.get().asItem()), ItemInit.ONYX.get(), 3, 100)
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.DEEPSLATE_ONYX_ORE.get()))
+			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.DEEPSLATE_ONYX_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.RUBY_ORE.get().asItem()), ItemInit.RUBY.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.RUBY_ORE.get()))
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.RUBY_ORE.get()))
 			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.RUBY_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.RUBY_ORE_DEEPSLATE.get().asItem()), ItemInit.RUBY.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.RUBY_ORE_DEEPSLATE.get()))
-			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.RUBY_ORE_DEEPSLATE.get().getRegistryName().getPath() + "_smelting"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.DEEPSLATE_RUBY_ORE.get().asItem()), ItemInit.RUBY.get(), 3, 100)
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.DEEPSLATE_RUBY_ORE.get()))
+			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.DEEPSLATE_RUBY_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.SAPPHIRE_ORE.get().asItem()), ItemInit.SAPPHIRE.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.SAPPHIRE_ORE.get()))
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.SAPPHIRE_ORE.get()))
 			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.SAPPHIRE_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get().asItem()), ItemInit.SAPPHIRE.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get()))
-			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.SAPPHIRE_ORE_DEEPSLATE.get().getRegistryName().getPath() + "_smelting"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get().asItem()), ItemInit.SAPPHIRE.get(), 3, 100)
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get()))
+			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.DEEPSLATE_SAPPHIRE_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.TIGERS_EYE_ORE.get().asItem()), ItemInit.TIGERS_EYE.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.TIGERS_EYE_ORE.get()))
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.TIGERS_EYE_ORE.get()))
 			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.TIGERS_EYE_ORE.get().getRegistryName().getPath() + "_smelting"));
 		
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get().asItem()), ItemInit.TIGERS_EYE.get(), 3, 100)
-			.unlockedBy("has_", has(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get()))
-			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get().getRegistryName().getPath() + "_smelting"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get().asItem()), ItemInit.TIGERS_EYE.get(), 3, 100)
+			.unlockedBy("has_" + BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath(), has(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get()))
+			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get().getRegistryName().getPath() + "_smelting"));
 	}
 
 }

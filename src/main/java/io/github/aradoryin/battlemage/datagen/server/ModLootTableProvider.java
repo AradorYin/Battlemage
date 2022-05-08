@@ -33,13 +33,13 @@ public class ModLootTableProvider extends BaseLootTableProvider
 		
 		//ORE LOOT_TABLE
 		dropSilkTouch(BlockInit.ONYX_ORE.get(), ItemInit.ONYX.get(), 1, 4);
-		dropSilkTouch(BlockInit.ONYX_ORE_DEEPSLATE.get(), ItemInit.ONYX.get(), 1, 4);
+		dropSilkTouch(BlockInit.DEEPSLATE_ONYX_ORE.get(), ItemInit.ONYX.get(), 1, 4);
 		dropSilkTouch(BlockInit.RUBY_ORE.get(), ItemInit.RUBY.get(), 1, 4);
-		dropSilkTouch(BlockInit.RUBY_ORE_DEEPSLATE.get(), ItemInit.RUBY.get(), 1, 4);
+		dropSilkTouch(BlockInit.DEEPSLATE_RUBY_ORE.get(), ItemInit.RUBY.get(), 1, 4);
 		dropSilkTouch(BlockInit.SAPPHIRE_ORE.get(), ItemInit.SAPPHIRE.get(), 1, 4);
-		dropSilkTouch(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get(), ItemInit.SAPPHIRE.get(), 1, 4);
+		dropSilkTouch(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get(), ItemInit.SAPPHIRE.get(), 1, 4);
 		dropSilkTouch(BlockInit.TIGERS_EYE_ORE.get(), ItemInit.TIGERS_EYE.get(), 1, 4);
-		dropSilkTouch(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get(), ItemInit.TIGERS_EYE.get(), 1, 4);
+		dropSilkTouch(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get(), ItemInit.TIGERS_EYE.get(), 1, 4);
 	}
 	
 	protected void dropSelf(Block block)

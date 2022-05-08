@@ -30,13 +30,13 @@ public class ModItemTagsProvider extends ItemTagsProvider
 			.add(BlockInit.EXAMPLE_ORE.get().asItem())
 			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem())
 			.add(BlockInit.ONYX_ORE.get().asItem())
-			.add(BlockInit.ONYX_ORE_DEEPSLATE.get().asItem())
+			.add(BlockInit.DEEPSLATE_ONYX_ORE.get().asItem())
 			.add(BlockInit.RUBY_ORE.get().asItem())
-			.add(BlockInit.RUBY_ORE_DEEPSLATE.get().asItem())
+			.add(BlockInit.DEEPSLATE_RUBY_ORE.get().asItem())
 			.add(BlockInit.SAPPHIRE_ORE.get().asItem())
-			.add(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get().asItem())
+			.add(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get().asItem())
 			.add(BlockInit.TIGERS_EYE_ORE.get().asItem())
-			.add(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get().asItem())
+			.add(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get().asItem())
 			;
 		
 		//TAG GEM
@@ -64,7 +64,14 @@ public class ModItemTagsProvider extends ItemTagsProvider
 			.add(ItemInit.PHASE_CORE.get());
 		
 		//TAG TABLET ENGRAVING ITEM
-		tag(TagInit.Items.TABLET_ENGRAVING_INGREDIENT);
+		tag(TagInit.Items.TABLET_ENGRAVING_INGREDIENT)
+			.add(ItemInit.IRON_POWDER.get())
+			.add(ItemInit.GOLD_POWDER.get())
+			.add(ItemInit.NETHERITE_POWDER.get())
+			.add(ItemInit.ICE_POWDER.get())
+			.add(ItemInit.STONE_TABLET.get())
+			.add(ItemInit.AETHER_INFUSED_TABLET.get())
+			;
 		
 		//TAG BRACER UPGRADE ITEM
 		tag(TagInit.Items.BRACER_UPGRADE_ITEM);

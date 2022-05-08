@@ -39,29 +39,29 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
 		tag(TagInit.Blocks.ONYX_ORE)
 			.add(BlockInit.ONYX_ORE.get())
-			.add(BlockInit.ONYX_ORE_DEEPSLATE.get());
+			.add(BlockInit.DEEPSLATE_ONYX_ORE.get());
 		tag(TagInit.Blocks.RUBY_ORE)
 			.add(BlockInit.RUBY_ORE.get())
-			.add(BlockInit.RUBY_ORE_DEEPSLATE.get());
+			.add(BlockInit.DEEPSLATE_RUBY_ORE.get());
 		tag(TagInit.Blocks.SAPPHIRE_ORE)
 			.add(BlockInit.SAPPHIRE_ORE.get())
-			.add(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get());
+			.add(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get());
 		tag(TagInit.Blocks.TIGERS_EYE_ORE)
 			.add(BlockInit.TIGERS_EYE_ORE.get())
-			.add(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get());
+			.add(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get());
 		
 		//TAG ORE
 		tag(Tags.Blocks.ORES)
 			.add(BlockInit.EXAMPLE_ORE.get())
 			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get())
 			.add(BlockInit.ONYX_ORE.get())
-			.add(BlockInit.ONYX_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_ONYX_ORE.get())
 			.add(BlockInit.RUBY_ORE.get())
-			.add(BlockInit.RUBY_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_RUBY_ORE.get())
 			.add(BlockInit.SAPPHIRE_ORE.get())
-			.add(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get())
 			.add(BlockInit.TIGERS_EYE_ORE.get())
-			.add(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get())
 			;
 		
 		//TAG MINEABLE WITH PICKAXE
@@ -71,16 +71,16 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get())
 			.add(BlockInit.ONYX_BLOCK.get())
 			.add(BlockInit.ONYX_ORE.get())
-			.add(BlockInit.ONYX_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_ONYX_ORE.get())
 			.add(BlockInit.RUBY_BLOCK.get())
 			.add(BlockInit.RUBY_ORE.get())
-			.add(BlockInit.RUBY_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_RUBY_ORE.get())
 			.add(BlockInit.SAPPHIRE_BLOCK.get())
 			.add(BlockInit.SAPPHIRE_ORE.get())
-			.add(BlockInit.SAPPHIRE_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_SAPPHIRE_ORE.get())
 			.add(BlockInit.TIGERS_EYE_BLOCK.get())
 			.add(BlockInit.TIGERS_EYE_ORE.get())
-			.add(BlockInit.TIGERS_EYE_ORE_DEEPSLATE.get())
+			.add(BlockInit.DEEPSLATE_TIGERS_EYE_ORE.get())
 			;
 		
 		//TAG NEEDS IRON TOOL
