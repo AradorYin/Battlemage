@@ -106,19 +106,22 @@ public class ItemInit
 
 	public static final RegistryObject<Item> BRACER = register("bracer", ()-> new BracerItem(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	
+	public static final RegistryObject<Item> COPPER_POWDER = register("copper_powder", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	// -> Used to upgrade Bracer with better control over ElementType.LIGHTNING
+	// -> Tablet Engraving Ingredient for AugmentType.MASTERY spells
+	
 	public static final RegistryObject<Item> DASH_RUNE_TABLET = register("dash_rune_tablet", ()-> new RuneTabletItem(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	
 	public static final RegistryObject<Item> GOLD_POWDER = register("gold_powder", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	// -> Used to upgrade Bracer with better control over ElementType.EARTH
-	// -> Tablet Engraving Ingredient for AugmentType.MASTERY spells
+	// -> Tablet Engraving Ingredient for AugmentType.DESTRUCTION spells
 	
 	public static final RegistryObject<Item> ICE_POWDER = register("ice_powder", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	// -> Used to upgrade Bracer with better control over ElementType.ICE
 	// -> Tablet Engraving Ingredient for AugmentType.CONTROL spells
 	
 	public static final RegistryObject<Item> IRON_POWDER = register("iron_powder", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	// -> Used to upgrade Bracer with better control over ElementType.LIGHTNING
-	// -> Tablet Engraving Ingredient for AugmentType.DESTRUCTION spells
+	// -> Used to upgrade Bracer with better control over ElementType.ICE
 	
 	public static final RegistryObject<Item> LOBBED_RUNE_TABLET = register("lobbed_rune_tablet", ()-> new RuneTabletItem(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	
@@ -140,7 +143,6 @@ public class ItemInit
 	public static final RegistryObject<Item> SHIELD_RUNE_TABLET = register("shield_rune_tablet", ()-> new RuneTabletItem(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	
 	public static final RegistryObject<Item> STONE_POWDER = register("stone_powder", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	// -> Used to upgrade Bracer with better control over ElementType.PHASE
 	// -> Tablet Engraving Ingredient Base
 	
 	public static final RegistryObject<Item> STONE_TABLET = register("stone_tablet", ()-> new TabletEngravingItem(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
