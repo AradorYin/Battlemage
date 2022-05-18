@@ -6,6 +6,7 @@ import io.github.aradoryin.battlemage.datagen.client.ModItemModelProvider;
 import io.github.aradoryin.battlemage.datagen.client.lang.ModEnUsProvider;
 import io.github.aradoryin.battlemage.datagen.server.ModBlockTagsProvider;
 import io.github.aradoryin.battlemage.datagen.server.ModItemTagsProvider;
+import io.github.aradoryin.battlemage.datagen.server.ModLootTableProvider;
 import io.github.aradoryin.battlemage.datagen.server.ModRecipeProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -39,6 +40,7 @@ public class BattlemageDataGeneration
 			generator.addProvider(new ModRecipeProvider(generator));
 			generator.addProvider(blockTags);
 			generator.addProvider(new ModItemTagsProvider(generator, blockTags, helper));
+			generator.addProvider(new ModLootTableProvider(generator));
 		}
 	}
 

@@ -5,19 +5,17 @@ import java.util.function.Consumer;
 import io.github.aradoryin.battlemage.Battlemage;
 import io.github.aradoryin.battlemage.init.BlockInit;
 import io.github.aradoryin.battlemage.init.ItemInit;
-import io.github.aradoryin.battlemage.init.TagInit;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
-import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
-public class ModRecipeProvider extends RecipeProvider
+public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
 
 	public ModRecipeProvider(DataGenerator generator)

@@ -17,7 +17,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 
-version = '0.1.0-1.18.2'
+version = '0.1.7-1.18.2'
 group = 'io.github.aradoryin.battlemage'
 archivesBaseName = 'battlemage'
 
