@@ -15,9 +15,11 @@ public class VersionNotes
 	 * > Recipes for: Item|Block|Ores
 	 * !--!
 	 * 
+	 * !-Done-!
 	 * Version 0.2.0
 	 * > Add textures for Rune Patterns
 	 * > Add Rune Patterns
+	 * !--!
 	 * > Add textures for Element Patterns
 	 * > Add Element Patterns
 	 * > Add textures for Stone
