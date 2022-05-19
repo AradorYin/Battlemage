@@ -4,6 +4,7 @@ public class VersionNotes
 {
 	
 	/*
+	 * !-Done-!
 	 * Version 0.1.0
 	 * > Notes about further advancement
 	 * > Creative Tab
@@ -12,6 +13,7 @@ public class VersionNotes
 	 * > Example Block
 	 * > Example Ores
 	 * > Recipes for: Item|Block|Ores
+	 * !--!
 	 * 
 	 * Version 0.2.0
 	 * > Add textures for Rune Patterns

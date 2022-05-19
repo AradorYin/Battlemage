@@ -1,6 +1,7 @@
 package io.github.aradoryin.battlemage.datagen.loot;
 
 import io.github.aradoryin.battlemage.init.BlockInit;
+import io.github.aradoryin.battlemage.init.ItemInit;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
@@ -19,6 +20,14 @@ public class ModBlockLootTables extends BlockLoot
 		// 		.hasBlockStateProperties(BlockInit.PLANT.get())
 		//		.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PlantBlockClass.AGE, AGE));
 		// this.add(BlockInit.PLANT.get(), createCropDrops(BlockInit.PLANT.get(), ItemInit.PLANT.get(), ItemInit.PLANT_SEED.get(), lootitemcondition$builder));
+		
+		//EXAMPLE BLOCK
+		this.dropSelf(BlockInit.EXAMPLE_BLOCK.get());
+		//EXAMPLE ORES
+		this.add(BlockInit.EXAMPLE_ORE.get(), (block) -> createOreDrop(BlockInit.EXAMPLE_ORE.get(), ItemInit.EXAMPLE_ITEM.get()));
+		this.dropWhenSilkTouch(BlockInit.EXAMPLE_ORE.get());
+		this.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get(), (block) -> createOreDrop(BlockInit.DEEPSLATE_EXAMPLE_ORE.get(), ItemInit.EXAMPLE_ITEM.get()));
+		this.dropWhenSilkTouch(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
 	}
 	
 	@Override

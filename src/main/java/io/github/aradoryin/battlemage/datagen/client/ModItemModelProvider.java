@@ -40,7 +40,26 @@ public class ModItemModelProvider extends ItemModelProvider
 	@Override
 	protected void registerModels()
 	{
-		// PLACE HERE
+		// ITEMS
+		
+		//EXAMPLE ITEM
+		simpleItem(ItemInit.EXAMPLE_ITEM.get());
+		
+		//RUNE PATTERNS
+		simpleItem(ItemInit.PATTERN_AOE.get());
+		simpleItem(ItemInit.PATTERN_POOL.get());
+		simpleItem(ItemInit.PATTERN_TRAP.get());
+		simpleItem(ItemInit.PATTERN_TARGETED.get());
+		simpleItem(ItemInit.PATTERN_LOB.get());
+		simpleItem(ItemInit.PATTERN_RAY.get());
+		simpleItem(ItemInit.PATTERN_NOVA.get());
+		
+		// BLOCKS
+		
+		//EXAMPLE BLOCKS
+		simpleBlockItem(BlockInit.EXAMPLE_BLOCK.get().asItem());
+		simpleBlockItem(BlockInit.EXAMPLE_ORE.get().asItem());
+		simpleBlockItem(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
 	}
 	
 }

@@ -28,7 +28,12 @@ public class TagInit
 	{
 
 		//EXAMPLE TAGS
+		public static final TagKey<Item> EXAMPLE_BLOCK = mod("example_block");
 		public static final TagKey<Item> EXAMPLE_ITEM = mod("example_item");
+		public static final TagKey<Item> EXAMPLE_ORE = mod("example_ore");
+		
+		//RUNE PATTERNS
+		public static final TagKey<Item> RUNE_PATTERNS = mod("rune_patterns");
 		
 		private static TagKey<Item> mod(String path)
 		{

@@ -24,7 +24,9 @@ public class ModBlockStateProvider extends BlockStateProvider
 	@Override
 	protected void registerStatesAndModels()
 	{
-		// PLACE HERE
+		simpleBlock(BlockInit.EXAMPLE_BLOCK.get());
+		simpleBlock(BlockInit.EXAMPLE_ORE.get());
+		simpleBlock(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
 	}
 	
 	public void makeCrop(CropBlock block, String modelName, String textureName) 

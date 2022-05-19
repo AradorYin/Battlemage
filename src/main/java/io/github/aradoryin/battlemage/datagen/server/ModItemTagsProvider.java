@@ -24,7 +24,32 @@ public class ModItemTagsProvider extends ItemTagsProvider
 	@Override
 	protected void addTags()
 	{
-		// PLACE HERE
+		// MINECRAFT TAGS
+		
+		// FORGE TAGS
+		tag(Tags.Items.ORES)
+			.addTag(TagInit.Items.EXAMPLE_ORE);
+		tag(Tags.Items.ORES_IN_GROUND_DEEPSLATE)
+			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
+		tag(Tags.Items.ORES_IN_GROUND_STONE)
+			.add(BlockInit.EXAMPLE_ORE.get().asItem());
+		tag(Tags.Items.ORE_RATES_SINGULAR)
+			.addTag(TagInit.Items.EXAMPLE_ORE);
+		
+		// MOD TAGS
+		tag(TagInit.Items.EXAMPLE_ITEM)
+			.add(ItemInit.EXAMPLE_ITEM.get());
+		tag(TagInit.Items.RUNE_PATTERNS)
+			.add(ItemInit.PATTERN_AOE.get())
+			.add(ItemInit.PATTERN_POOL.get())
+			.add(ItemInit.PATTERN_TRAP.get())
+			.add(ItemInit.PATTERN_TARGETED.get())
+			.add(ItemInit.PATTERN_LOB.get())
+			.add(ItemInit.PATTERN_RAY.get())
+			.add(ItemInit.PATTERN_NOVA.get());
+		tag(TagInit.Items.EXAMPLE_ORE)
+			.add(BlockInit.EXAMPLE_ORE.get().asItem())
+			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
 	}
 
 }

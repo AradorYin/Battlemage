@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import io.github.aradoryin.battlemage.Battlemage;
 import io.github.aradoryin.battlemage.init.BlockInit;
 import io.github.aradoryin.battlemage.init.ItemInit;
+import io.github.aradoryin.battlemage.init.TagInit;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -27,6 +28,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		//Shaped Recipes
+		
 		//EXAMPLE BLOCK
 		ShapedRecipeBuilder.shaped(BlockInit.EXAMPLE_BLOCK.get(), 1)
 			.define('a', ItemInit.EXAMPLE_ITEM.get())
@@ -38,21 +40,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		
 		
 		//Shapeless Recipes
+		
 		//EXAMPLE ITEM
 		ShapelessRecipeBuilder.shapeless(ItemInit.EXAMPLE_ITEM.get(), 9)
 			.requires(BlockInit.EXAMPLE_BLOCK.get())
-			.unlockedBy("has_example_item", has(BlockInit.EXAMPLE_BLOCK.get().asItem()))
+			.unlockedBy("has_example_block", has(BlockInit.EXAMPLE_BLOCK.get().asItem()))
 			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, ItemInit.EXAMPLE_ITEM.get().getRegistryName().getPath() + "_crafting"));
 		
 		
 		//Cooking Recipe
+		
 		//EXAMPLE ORES
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.EXAMPLE_ORE.get().asItem()), ItemInit.EXAMPLE_ITEM.get(), 3, 100)
-			.unlockedBy("has_example_ore", has(BlockInit.EXAMPLE_ORE.get()))
-			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.EXAMPLE_ORE.get().getRegistryName().getPath() + "_smelting"));
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem()), ItemInit.EXAMPLE_ITEM.get(), 3, 100)
-			.unlockedBy("has_deepslate_example_ore", has(BlockInit.DEEPSLATE_EXAMPLE_ORE.get()))
-			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, BlockInit.DEEPSLATE_EXAMPLE_ORE.get().getRegistryName().getPath() + "_smelting"));
+		SimpleCookingRecipeBuilder.smelting(Ingredient.of(TagInit.Items.EXAMPLE_ORE), ItemInit.EXAMPLE_ITEM.get(), 3, 100)
+			.unlockedBy("has_" + TagInit.Items.EXAMPLE_ORE.toString(), has(TagInit.Items.EXAMPLE_ORE))
+			.save(consumer, new ResourceLocation(Battlemage.MOD_ID, TagInit.Items.EXAMPLE_ORE.location().getPath()));
 	}
 
 }

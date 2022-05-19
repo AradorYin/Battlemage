@@ -54,12 +54,17 @@ public class ItemInit
 	 * -> Augment Powder -> Enhancement of spell
 	 */
 	
-	/*
-	 * RUNE PATTERNS:
-	 * AoE Pattern -> AoE | Pool | Trap
-	 * Targeted Pattern -> Targeted | Lobbed | Ray
-	 * Nova Pattern
-	 */
+	// RUNE PATTERNS
+	//AOE
+	public static final RegistryObject<Item> PATTERN_AOE = register("pattern_aoe", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_POOL = register("pattern_pool", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_TRAP = register("pattern_trap", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	//SINGLE
+	public static final RegistryObject<Item> PATTERN_TARGETED = register("pattern_targeted", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_LOB = register("pattern_lob", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_RAY = register("pattern_ray", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	//SHIELD
+	public static final RegistryObject<Item> PATTERN_NOVA = register("pattern_nova", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	
 	/*
 	 * BRACER:
