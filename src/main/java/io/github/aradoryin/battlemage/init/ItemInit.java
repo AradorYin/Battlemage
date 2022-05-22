@@ -19,18 +19,32 @@ public class ItemInit
 	public static final RegistryObject<Item> EXAMPLE_ITEM = register("example_item", ()-> new ExampleItem(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	// !!--------------------------------------------!!
 
-	/*
-	 * ELEMENTAL PATTERNS:
-	 * Corruption -> AugmentType.MASTERY
-	 * Delirium -> AugmentType.MASTERY
-	 * Lightning -> AugmentType.MASTERY
-	 * Earth -> AugmentType.DESTRUCTION
-	 * Fire -> AugmentType.DESTRUCTION
-	 * Necromancy -> AugmentType.DESTRUCTION
-	 * Ice -> AugmentType.CONTROL
-	 * Kinesis -> AugmentType.CONTROL
-	 * Phase -> AugmentType.CONTROL
-	 */
+	// ELEMENTAL PATTERNS
+	//MASTERY
+	public static final RegistryObject<Item> PATTERN_ELEMENT_CORRUPTION = register("pattern_element_corruption", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_ELEMENT_DELIRIUM = register("pattern_element_delirium", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_ELEMENT_LIGHTNING = register("pattern_element_lightning", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	//DESTRUCTION
+	public static final RegistryObject<Item> PATTERN_ELEMENT_EARTH = register("pattern_element_earth", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_ELEMENT_FIRE = register("pattern_element_fire", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_ELEMENT_NECROMANCY = register("pattern_element_necromancy", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	//CONTROL
+	public static final RegistryObject<Item> PATTERN_ELEMENT_ICE = register("pattern_element_ice", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_ELEMENT_KINESIS = register("pattern_element_kinesis", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_ELEMENT_PHASE = register("pattern_element_phase", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+
+	
+	// RUNE PATTERNS
+	//AOE
+	public static final RegistryObject<Item> PATTERN_RUNE_AOE = register("pattern_rune_aoe", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_RUNE_POOL = register("pattern_rune_pool", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_RUNE_TRAP = register("pattern_rune_trap", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	//SINGLE
+	public static final RegistryObject<Item> PATTERN_RUNE_TARGETED = register("pattern_rune_targeted", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_RUNE_LOB = register("pattern_rune_lob", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> PATTERN_RUNE_RAY = register("pattern_rune_ray", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	//SHIELD
+	public static final RegistryObject<Item> PATTERN_RUNE_NOVA = register("pattern_rune_nova", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 
 	/*
 	 * TABLETS:
@@ -53,18 +67,6 @@ public class ItemInit
 	 * -> Rune Pattern -> Type of spell
 	 * -> Augment Powder -> Enhancement of spell
 	 */
-	
-	// RUNE PATTERNS
-	//AOE
-	public static final RegistryObject<Item> PATTERN_AOE = register("pattern_aoe", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Item> PATTERN_POOL = register("pattern_pool", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Item> PATTERN_TRAP = register("pattern_trap", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	//SINGLE
-	public static final RegistryObject<Item> PATTERN_TARGETED = register("pattern_targeted", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Item> PATTERN_LOB = register("pattern_lob", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Item> PATTERN_RAY = register("pattern_ray", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	//SHIELD
-	public static final RegistryObject<Item> PATTERN_NOVA = register("pattern_nova", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	
 	/*
 	 * BRACER:

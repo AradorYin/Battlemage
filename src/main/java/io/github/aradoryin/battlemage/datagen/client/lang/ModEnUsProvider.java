@@ -19,17 +19,32 @@ public class ModEnUsProvider extends LanguageProvider
 	{
 		// ITEMS
 		
+		//CREATIVE TAB
+		add("itemGroup.battlemage", "Battlemage");
+		
 		//EXAMPLE ITEM
 		add(ItemInit.EXAMPLE_ITEM.get(), "Example Item");
 		
 		//RUNE PATTERNS
-		add(ItemInit.PATTERN_AOE.get(), "AoE Pattern");
-		add(ItemInit.PATTERN_POOL.get(), "Pool Pattern");
-		add(ItemInit.PATTERN_TRAP.get(), "Trap Pattern");
-		add(ItemInit.PATTERN_TARGETED.get(), "Targeted Pattern");
-		add(ItemInit.PATTERN_LOB.get(), "Lob Pattern");
-		add(ItemInit.PATTERN_RAY.get(), "Ray Pattern");
-		add(ItemInit.PATTERN_NOVA.get(), "Nova Pattern");
+		add(ItemInit.PATTERN_RUNE_AOE.get(), "AoE Pattern");
+		add(ItemInit.PATTERN_RUNE_LOB.get(), "Lob Pattern");
+		add(ItemInit.PATTERN_RUNE_NOVA.get(), "Nova Pattern");
+		add(ItemInit.PATTERN_RUNE_POOL.get(), "Pool Pattern");
+		add(ItemInit.PATTERN_RUNE_RAY.get(), "Ray Pattern");
+		add(ItemInit.PATTERN_RUNE_TARGETED.get(), "Targeted Pattern");
+		add(ItemInit.PATTERN_RUNE_TRAP.get(), "Trap Pattern");
+		
+		//ELEMENT PATTERNS
+		add(ItemInit.PATTERN_ELEMENT_CORRUPTION.get(), "Corruption Pattern");
+		add(ItemInit.PATTERN_ELEMENT_DELIRIUM.get(), "Delirium Pattern");
+		add(ItemInit.PATTERN_ELEMENT_EARTH.get(), "Earth Pattern");
+		add(ItemInit.PATTERN_ELEMENT_FIRE.get(), "Fire Pattern");
+		add(ItemInit.PATTERN_ELEMENT_ICE.get(), "Ice Pattern");
+		add(ItemInit.PATTERN_ELEMENT_KINESIS.get(), "Kinesis Pattern");
+		add(ItemInit.PATTERN_ELEMENT_LIGHTNING.get(), "Lightning Pattern");
+		add(ItemInit.PATTERN_ELEMENT_NECROMANCY.get(), "Necromancy Pattern");
+		add(ItemInit.PATTERN_ELEMENT_PHASE.get(), "Phase Pattern");
+		
 		
 		// BLOCKS
 		

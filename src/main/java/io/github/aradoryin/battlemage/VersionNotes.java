@@ -20,8 +20,8 @@ public class VersionNotes
 	 * > Add textures for Rune Patterns
 	 * > Add Rune Patterns
 	 * > Add textures for Element Patterns
-	 * !--!
 	 * > Add Element Patterns
+	 * !--!
 	 * > Add textures for Stone
 	 * > Add Stone
 	 * > Recipes for: Stone

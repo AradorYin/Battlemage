@@ -35,6 +35,9 @@ public class TagInit
 		//RUNE PATTERNS
 		public static final TagKey<Item> RUNE_PATTERNS = mod("rune_patterns");
 		
+		//ELEMENT PATTERNS
+		public static final TagKey<Item> ELEMENT_PATTERNS = mod("element_patterns");
+		
 		private static TagKey<Item> mod(String path)
 		{
 			return ItemTags.create(new ResourceLocation(Battlemage.MOD_ID, path));

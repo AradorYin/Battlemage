@@ -46,13 +46,25 @@ public class ModItemModelProvider extends ItemModelProvider
 		simpleItem(ItemInit.EXAMPLE_ITEM.get());
 		
 		//RUNE PATTERNS
-		simpleItem(ItemInit.PATTERN_AOE.get());
-		simpleItem(ItemInit.PATTERN_POOL.get());
-		simpleItem(ItemInit.PATTERN_TRAP.get());
-		simpleItem(ItemInit.PATTERN_TARGETED.get());
-		simpleItem(ItemInit.PATTERN_LOB.get());
-		simpleItem(ItemInit.PATTERN_RAY.get());
-		simpleItem(ItemInit.PATTERN_NOVA.get());
+		simpleItem(ItemInit.PATTERN_RUNE_AOE.get());
+		simpleItem(ItemInit.PATTERN_RUNE_LOB.get());
+		simpleItem(ItemInit.PATTERN_RUNE_NOVA.get());
+		simpleItem(ItemInit.PATTERN_RUNE_POOL.get());
+		simpleItem(ItemInit.PATTERN_RUNE_RAY.get());
+		simpleItem(ItemInit.PATTERN_RUNE_TARGETED.get());
+		simpleItem(ItemInit.PATTERN_RUNE_TRAP.get());
+		
+		//ELEMENT PATTERNS
+		simpleItem(ItemInit.PATTERN_ELEMENT_CORRUPTION.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_DELIRIUM.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_EARTH.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_FIRE.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_ICE.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_KINESIS.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_LIGHTNING.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_NECROMANCY.get());
+		simpleItem(ItemInit.PATTERN_ELEMENT_PHASE.get());
+		
 		
 		// BLOCKS
 		
