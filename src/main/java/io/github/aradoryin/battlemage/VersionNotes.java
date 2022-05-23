@@ -21,8 +21,8 @@ public class VersionNotes
 	 * > Add Rune Patterns
 	 * > Add textures for Element Patterns
 	 * > Add Element Patterns
-	 * !--!
 	 * > Add textures for Stone
+	 * !--!
 	 * > Add Stone
 	 * > Recipes for: Stone
 	 * 
