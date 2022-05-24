@@ -6,8 +6,12 @@ import io.github.aradoryin.battlemage.Battlemage;
 import io.github.aradoryin.battlemage.init.BlockInit;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -24,9 +28,21 @@ public class ModBlockStateProvider extends BlockStateProvider
 	@Override
 	protected void registerStatesAndModels()
 	{
+		// EXAMPLE BLOCKS
 		simpleBlock(BlockInit.EXAMPLE_BLOCK.get());
 		simpleBlock(BlockInit.EXAMPLE_ORE.get());
 		simpleBlock(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
+		// STONES
+		buttonBlock((ButtonBlock) BlockInit.A_I_STONE_BUTTON.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *ButtonBlock* | ResourceLocation Texture
+		pressurePlateBlock((PressurePlateBlock) BlockInit.A_I_STONE_PRESSURE_PLATE.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *PressurePlateBlock* | ResourceLocation Texture
+		simpleBlock(BlockInit.A_I_CHISELED_STONE_BRICKS.get());
+		simpleBlock(BlockInit.A_I_CRACKED_STONE_BRICKS.get());
+		simpleBlock(BlockInit.A_I_STONE.get());
+		simpleBlock(BlockInit.A_I_STONE_BRICK.get());
+		slabBlock((SlabBlock) BlockInit.A_I_STONE_SLAB.get(), blockTexture(BlockInit.A_I_STONE.get()), blockTexture(BlockInit.A_I_STONE.get())); // where *SlabBlock* | DoubleSlab Texture | ResourceLocation Texture
+		stairsBlock((StairBlock) BlockInit.A_I_STONE_BRICK_STAIRS.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *StairBlock* | ResourceLocation Texture
+		stairsBlock((StairBlock) BlockInit.A_I_STONE_STAIRS.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *StairBlock* | ResourceLocation Texture
+		wallBlock((WallBlock) BlockInit.A_I_STONE_WALL.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *WallBlock* | ResourceLocation Texture
 	}
 	
 	public void makeCrop(CropBlock block, String modelName, String textureName) 

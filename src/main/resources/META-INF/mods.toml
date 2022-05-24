@@ -5,7 +5,7 @@ license="MIT"
 
 [[mods]]
 modId="battlemage"
-version="0.2.5-1.18.2"
+version="0.2.6-1.18.2"
 displayName="Battlemage"
 #updateJSONURL="https://change.me.example.invalid/updates.json"
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/"

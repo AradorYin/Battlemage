@@ -49,18 +49,71 @@ public class BlockInit
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	// !!--------------------------------------------!!
 
+	// STONE
+	public static final RegistryObject<Block> A_I_CHISELED_STONE_BRICKS = register("a_i_chiseled_stone_bricks", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_CRACKED_STONE_BRICKS = register("a_i_cracked_stone_bricks", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE = register("a_i_stone", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_BRICK = register("a_i_stone_bricks", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_BRICK_STAIRS = register("a_i_stone_stairs", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_BUTTON = register("a_i_stone_button", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_PRESSURE_PLATE = register("a_i_stone_pressure_plate", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_SLAB = register("a_i_stone_slab", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_STAIRS = register("a_i_stone_stairs", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_WALL = register("a_i_stone_wall", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	
 	/*
 	 * GEM BLOCKS
 	 * GEM ORES
-	 * 
-	 * Stones:
-	 * Aether-Infused Stone
-	 * Aether-Infused Stone Bricks
-	 * Aether-Infused Stone Button
-	 * Aether-Infused Stone Pressure Plate
-	 * Aether-Infused Stone Slab
-	 * Aether-Infused Stone Stairs
-	 * Aether-Infused Stone Wall
 	 * 
 	 * Wood:
 	 * Aether-Infused Leaves

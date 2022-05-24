@@ -28,6 +28,18 @@ public class ModBlockLootTables extends BlockLoot
 		this.dropWhenSilkTouch(BlockInit.EXAMPLE_ORE.get());
 		this.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get(), (block) -> createOreDrop(BlockInit.DEEPSLATE_EXAMPLE_ORE.get(), ItemInit.EXAMPLE_ITEM.get()));
 		this.dropWhenSilkTouch(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
+		
+		//STONES
+		this.dropSelf(BlockInit.A_I_CHISELED_STONE_BRICKS.get());
+		this.dropSelf(BlockInit.A_I_CRACKED_STONE_BRICKS.get());
+		this.dropSelf(BlockInit.A_I_STONE.get());
+		this.dropSelf(BlockInit.A_I_STONE_BRICK.get());
+		this.dropSelf(BlockInit.A_I_STONE_BRICK_STAIRS.get());
+		this.dropSelf(BlockInit.A_I_STONE_BUTTON.get());
+		this.dropSelf(BlockInit.A_I_STONE_PRESSURE_PLATE.get());
+		this.dropSelf(BlockInit.A_I_STONE_SLAB.get());
+		this.dropSelf(BlockInit.A_I_STONE_STAIRS.get());
+		this.dropSelf(BlockInit.A_I_STONE_WALL.get());
 	}
 	
 	@Override

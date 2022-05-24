@@ -72,6 +72,18 @@ public class ModItemModelProvider extends ItemModelProvider
 		simpleBlockItem(BlockInit.EXAMPLE_BLOCK.get().asItem());
 		simpleBlockItem(BlockInit.EXAMPLE_ORE.get().asItem());
 		simpleBlockItem(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
+		
+		//STONES
+		simpleBlockItem(BlockInit.A_I_CHISELED_STONE_BRICKS.get().asItem());
+		simpleBlockItem(BlockInit.A_I_CRACKED_STONE_BRICKS.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_BRICK.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_BRICK_STAIRS.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_BUTTON.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_PRESSURE_PLATE.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_SLAB.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_STAIRS.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_WALL.get().asItem());
 	}
 	
 }
