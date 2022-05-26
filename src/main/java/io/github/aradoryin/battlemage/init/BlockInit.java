@@ -6,11 +6,20 @@ import com.google.common.base.Supplier;
 
 import io.github.aradoryin.battlemage.Battlemage;
 import io.github.aradoryin.battlemage.block.ExampleBlock;
+import io.github.aradoryin.battlemage.block.ModButtonBlock;
+import io.github.aradoryin.battlemage.block.ModPressurePlateBlock;
+import io.github.aradoryin.battlemage.block.ModSlabBlock;
+import io.github.aradoryin.battlemage.block.ModStairBlock;
+import io.github.aradoryin.battlemage.block.ModWallBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -50,18 +59,6 @@ public class BlockInit
 	// !!--------------------------------------------!!
 
 	// STONE
-	public static final RegistryObject<Block> A_I_CHISELED_STONE_BRICKS = register("a_i_chiseled_stone_bricks", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-					.strength(3.0f)
-					.sound(SoundType.STONE)
-					.requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Block> A_I_CRACKED_STONE_BRICKS = register("a_i_cracked_stone_bricks", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-					.strength(3.0f)
-					.sound(SoundType.STONE)
-					.requiresCorrectToolForDrops()), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE = register("a_i_stone", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
@@ -74,50 +71,64 @@ public class BlockInit
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Block> A_I_STONE_BRICK_SLAB = register("a_i_stone_brick_slab", 
+	public static final RegistryObject<Block> A_I_CHISELED_STONE_BRICKS = register("a_i_chiseled_stone_bricks", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_CRACKED_STONE_BRICKS = register("a_i_cracked_stone_bricks", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_BRICK_SLAB = register("a_i_stone_brick_slab", 
+			() -> new ModSlabBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE_BRICK_STAIRS = register("a_i_stone_brick_stairs", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+			() -> new ModStairBlock(A_I_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE_BRICK_WALL = register("a_i_stone_brick_wall", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+			() -> new ModWallBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE_BUTTON = register("a_i_stone_button", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+			() -> new ModButtonBlock(false, BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
-					.requiresCorrectToolForDrops()), 
+					.requiresCorrectToolForDrops()
+					.noCollission()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE_PRESSURE_PLATE = register("a_i_stone_pressure_plate", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+			() -> new ModPressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
-					.requiresCorrectToolForDrops()), 
+					.requiresCorrectToolForDrops()
+					.noCollission()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE_SLAB = register("a_i_stone_slab", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+			() -> new ModSlabBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE_STAIRS = register("a_i_stone_stairs", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+			() -> new ModStairBlock(A_I_STONE.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<Block> A_I_STONE_WALL = register("a_i_stone_wall", 
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+			() -> new ModWallBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 

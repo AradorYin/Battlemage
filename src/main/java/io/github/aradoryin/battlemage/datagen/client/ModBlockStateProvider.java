@@ -33,18 +33,18 @@ public class ModBlockStateProvider extends BlockStateProvider
 		simpleBlock(BlockInit.EXAMPLE_ORE.get());
 		simpleBlock(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
 		// STONES
-		buttonBlock((ButtonBlock) BlockInit.A_I_STONE_BUTTON.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *ButtonBlock* | ResourceLocation Texture
-		pressurePlateBlock((PressurePlateBlock) BlockInit.A_I_STONE_PRESSURE_PLATE.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *PressurePlateBlock* | ResourceLocation Texture
-		simpleBlock(BlockInit.A_I_CHISELED_STONE_BRICKS.get());
-		simpleBlock(BlockInit.A_I_CRACKED_STONE_BRICKS.get());
 		simpleBlock(BlockInit.A_I_STONE.get());
 		simpleBlock(BlockInit.A_I_STONE_BRICKS.get());
-		slabBlock((SlabBlock) BlockInit.A_I_STONE_BRICK_SLAB.get(), blockTexture(BlockInit.A_I_STONE.get()), blockTexture(BlockInit.A_I_STONE.get())); // where *SlabBlock* | DoubleSlab Texture | ResourceLocation Texture
-		slabBlock((SlabBlock) BlockInit.A_I_STONE_SLAB.get(), blockTexture(BlockInit.A_I_STONE.get()), blockTexture(BlockInit.A_I_STONE.get())); // where *SlabBlock* | DoubleSlab Texture | ResourceLocation Texture
-		stairsBlock((StairBlock) BlockInit.A_I_STONE_BRICK_STAIRS.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *StairBlock* | ResourceLocation Texture
-		stairsBlock((StairBlock) BlockInit.A_I_STONE_STAIRS.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *StairBlock* | ResourceLocation Texture
-		wallBlock((WallBlock) BlockInit.A_I_STONE_BRICK_WALL.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *WallBlock* | ResourceLocation Texture
-		wallBlock((WallBlock) BlockInit.A_I_STONE_WALL.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *WallBlock* | ResourceLocation Texture
+		simpleBlock(BlockInit.A_I_CHISELED_STONE_BRICKS.get());
+		simpleBlock(BlockInit.A_I_CRACKED_STONE_BRICKS.get());
+		buttonBlock((ButtonBlock) BlockInit.A_I_STONE_BUTTON.get(), blockTexture(BlockInit.A_I_STONE.get()));
+		pressurePlateBlock((PressurePlateBlock) BlockInit.A_I_STONE_PRESSURE_PLATE.get(), blockTexture(BlockInit.A_I_STONE.get()));
+		slabBlock((SlabBlock) BlockInit.A_I_STONE_BRICK_SLAB.get(), blockTexture(BlockInit.A_I_STONE_BRICKS.get()), blockTexture(BlockInit.A_I_STONE_BRICKS.get()));
+		slabBlock((SlabBlock) BlockInit.A_I_STONE_SLAB.get(), blockTexture(BlockInit.A_I_STONE.get()), blockTexture(BlockInit.A_I_STONE.get()));
+		stairsBlock((StairBlock) BlockInit.A_I_STONE_BRICK_STAIRS.get(), blockTexture(BlockInit.A_I_STONE_BRICKS.get()));
+		stairsBlock((StairBlock) BlockInit.A_I_STONE_STAIRS.get(), blockTexture(BlockInit.A_I_STONE.get()));
+		wallBlock((WallBlock) BlockInit.A_I_STONE_BRICK_WALL.get(), blockTexture(BlockInit.A_I_STONE_BRICKS.get()));
+		wallBlock((WallBlock) BlockInit.A_I_STONE_WALL.get(), blockTexture(BlockInit.A_I_STONE.get()));
 	}
 	
 	public void makeCrop(CropBlock block, String modelName, String textureName) 
