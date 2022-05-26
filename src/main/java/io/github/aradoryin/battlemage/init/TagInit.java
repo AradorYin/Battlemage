@@ -25,21 +25,27 @@ public class TagInit
 		public static final TagKey<Block> MOD_SLAB = mod("mod_slab");
 		public static final TagKey<Block> MOD_STAIRS = mod("mod_stairs");
 		public static final TagKey<Block> MOD_VALID_SPAWNABLE = mod("mod_valid_spawnable");
+		public static final TagKey<Block> MOD_WALLS = mod("mod_walls");
 		
 		//ORE TAGS
 		public static final TagKey<Block> MOD_STONE_ORE_STONE = mod("mod_ore_stone");
 		public static final TagKey<Block> MOD_STONE_ORE_DEEPSLATE = mod("mod_ore_deepslate");
+		public static final TagKey<Block> DEEPSLATE_EXAMPLE_ORE = mod("deepslate_example_ore");
+		public static final TagKey<Block> EXAMPLE_ORE = mod("example_ore");
 		
 		//STONE TAGS
 		public static final TagKey<Block> MOD_CHISELED_STONE_BRICKS = mod("mod_chiseled_stone_bricks");
 		public static final TagKey<Block> MOD_CRACKED_CHISELED_STONE_BRICKS = mod("mod_cracked_chiseled_stone_bricks");
 		public static final TagKey<Block> MOD_STONE = mod("mod_stone");
 		public static final TagKey<Block> MOD_STONE_BRICKS = mod("mod_stone_bricks");
+		public static final TagKey<Block> MOD_STONE_BRICK_SLAB = mod("mod_stone_brick_slab");
+		public static final TagKey<Block> MOD_STONE_BRICK_STAIRS = mod("mod_stone_brick_stairs");
+		public static final TagKey<Block> MOD_STONE_BRICK_WALL = mod("mod_stone_brick_wall");
 		public static final TagKey<Block> MOD_STONE_BUTTONS = mod("mod_stone_buttons");
 		public static final TagKey<Block> MOD_STONE_PRESSURE_PLATE = mod("mod_stone_pressure_plate");
 		public static final TagKey<Block> MOD_STONE_SLAB = mod("mod_stone_slab");
 		public static final TagKey<Block> MOD_STONE_STAIRS = mod("mod_stone_stairs");
-		public static final TagKey<Block> MOD_WALLS = mod("mod_walls");
+		public static final TagKey<Block> MOD_STONE_WALL = mod("mod_stone_wall");
 		
 		//STORAGE BLOCK TAGS
 		public static final TagKey<Block> EXAMPLE_BLOCK = mod("example_block");
@@ -60,27 +66,35 @@ public class TagInit
 		//GENERAL TAGS
 		public static final TagKey<Item> MOD_BUTTONS = mod("mod_buttons");
 		public static final TagKey<Item> MOD_DOORS = mod("mod_doors");
+		public static final TagKey<Item> MOD_GEM = mod("mod_gem");
 		public static final TagKey<Item> MOD_PRESSURE_PLATE = mod("mod_pressure_plate");
 		public static final TagKey<Item> MOD_SLAB = mod("mod_slab");
 		public static final TagKey<Item> MOD_STAIRS = mod("mod_stairs");
 		public static final TagKey<Item> MOD_VALID_SPAWNABLE = mod("mod_valid_spawnable");
+		public static final TagKey<Item> MOD_WALLS = mod("mod_walls");
 		
 		//ORE TAGS
 		public static final TagKey<Item> MOD_STONE_ORE_STONE = mod("mod_ore_stone");
 		public static final TagKey<Item> MOD_STONE_ORE_DEEPSLATE = mod("mod_ore_deepslate");
+		public static final TagKey<Item> DEEPSLATE_EXAMPLE_ORE = mod("deepslate_example_ore");
+		public static final TagKey<Item> EXAMPLE_ORE = mod("example_ore");
 		
 		//STONE TAGS
 		public static final TagKey<Item> MOD_CHISELED_STONE_BRICKS = mod("mod_chiseled_stone_bricks");
 		public static final TagKey<Item> MOD_CRACKED_CHISELED_STONE_BRICKS = mod("mod_cracked_chiseled_stone_bricks");
 		public static final TagKey<Item> MOD_STONE = mod("mod_stone");
-		public static final TagKey<Item> MOD_STONE_BRICKS = mod("mod_stone_bricks");
 		public static final TagKey<Item> MOD_STONE_BUTTONS = mod("mod_stone_buttons");
+		public static final TagKey<Item> MOD_STONE_BRICKS = mod("mod_stone_bricks");
+		public static final TagKey<Item> MOD_STONE_BRICK_SLAB = mod("mod_stone_brick_slab");
+		public static final TagKey<Item> MOD_STONE_BRICK_STAIRS = mod("mod_stone_brick_stairs");
+		public static final TagKey<Item> MOD_STONE_BRICK_WALL = mod("mod_stone_brick_wall");
 		public static final TagKey<Item> MOD_STONE_PRESSURE_PLATE = mod("mod_stone_pressure_plate");
 		public static final TagKey<Item> MOD_STONE_SLAB = mod("mod_stone_slab");
 		public static final TagKey<Item> MOD_STONE_STAIRS = mod("mod_stone_stairs");
-		public static final TagKey<Item> MOD_WALLS = mod("mod_walls");
+		public static final TagKey<Item> MOD_STONE_WALL = mod("mod_stone_wall");
 		
 		//STORAGE BLOCK TAGS
+		public static final TagKey<Item> MOD_STORAGE_BLOCK = mod("mod_storage_block");
 		public static final TagKey<Item> EXAMPLE_BLOCK = mod("example_block");
 		
 		//RUNE PATTERNS

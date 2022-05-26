@@ -22,10 +22,9 @@ public class VersionNotes
 	 * > Add textures for Element Patterns
 	 * > Add Element Patterns
 	 * > Add textures for Stone
-	 * !--!
 	 * > Add Stone
-	 * !--!
 	 * > Recipes for: Stone
+	 * !--!
 	 * 
 	 * Version 0.3.0
 	 * > Add textures for Tablet

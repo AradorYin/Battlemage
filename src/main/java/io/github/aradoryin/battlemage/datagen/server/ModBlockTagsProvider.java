@@ -65,14 +65,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 		tag(BlockTags.STAIRS)
 			.addTag(TagInit.Blocks.MOD_STAIRS);
 		tag(BlockTags.TRAPDOORS);
+		tag(BlockTags.WALLS)
+			.addTag(TagInit.Blocks.MOD_WALLS);
 		
 		//STONE TAGS
 		tag(BlockTags.STONE_BRICKS)
 			.addTag(TagInit.Blocks.MOD_STONE_BRICKS);
 		tag(BlockTags.STONE_PRESSURE_PLATES)
 			.addTag(TagInit.Blocks.MOD_STONE_PRESSURE_PLATE);
-		tag(BlockTags.WALLS)
-			.addTag(TagInit.Blocks.MOD_WALLS);
 		
 		//WOOD TAGS
 		tag(BlockTags.LEAVES);
@@ -136,10 +136,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 			.addTag(TagInit.Blocks.MOD_CRACKED_CHISELED_STONE_BRICKS)
 			.addTag(TagInit.Blocks.MOD_STONE)
 			.addTag(TagInit.Blocks.MOD_STONE_BRICKS)
+			.addTag(TagInit.Blocks.MOD_STONE_BRICK_SLAB)
+			.addTag(TagInit.Blocks.MOD_STONE_BRICK_STAIRS)
+			.addTag(TagInit.Blocks.MOD_STONE_BRICK_WALL)
 			.addTag(TagInit.Blocks.MOD_STONE_BUTTONS)
 			.addTag(TagInit.Blocks.MOD_STONE_PRESSURE_PLATE)
 			.addTag(TagInit.Blocks.MOD_STONE_SLAB)
-			.addTag(TagInit.Blocks.MOD_STONE_STAIRS);
+			.addTag(TagInit.Blocks.MOD_STONE_STAIRS)
+			.addTag(TagInit.Blocks.MOD_STONE_WALL);
 		tag(TagInit.Blocks.STONE_MINEABLE_PICKAXE)
 			.addTag(TagInit.Blocks.MOD_STONE_ORE_DEEPSLATE)
 			.addTag(TagInit.Blocks.MOD_STONE_ORE_STONE);
@@ -159,6 +163,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 			.addTag(TagInit.Blocks.MOD_CRACKED_CHISELED_STONE_BRICKS)
 			.addTag(TagInit.Blocks.MOD_STONE)
 			.addTag(TagInit.Blocks.MOD_STONE_BRICKS);
+		tag(TagInit.Blocks.MOD_WALLS)
+			.addTag(TagInit.Blocks.MOD_STONE_BRICK_WALL)
+			.addTag(TagInit.Blocks.MOD_STONE_WALL);
 		
 		//STORAGE BLOCK TAGS
 		tag(TagInit.Blocks.EXAMPLE_BLOCK)
@@ -166,8 +173,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 		
 		//ORE TAGS
 		tag(TagInit.Blocks.MOD_STONE_ORE_DEEPSLATE)
-			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
+			.addTag(TagInit.Blocks.DEEPSLATE_EXAMPLE_ORE);
 		tag(TagInit.Blocks.MOD_STONE_ORE_STONE)
+			.addTag(TagInit.Blocks.EXAMPLE_ORE);
+		
+		tag(TagInit.Blocks.DEEPSLATE_EXAMPLE_ORE)
+			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get());
+		tag(TagInit.Blocks.EXAMPLE_ORE)
 			.add(BlockInit.EXAMPLE_ORE.get());
 		
 		//STONE TAGS
@@ -178,7 +190,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 		tag(TagInit.Blocks.MOD_STONE)
 			.add(BlockInit.A_I_STONE.get());
 		tag(TagInit.Blocks.MOD_STONE_BRICKS)
-			.add(BlockInit.A_I_STONE_BRICK.get());
+			.add(BlockInit.A_I_STONE_BRICKS.get());
+		tag(TagInit.Blocks.MOD_STONE_BRICK_SLAB)
+			.add(BlockInit.A_I_STONE_BRICK_SLAB.get());
+		tag(TagInit.Blocks.MOD_STONE_BRICK_STAIRS)
+			.add(BlockInit.A_I_STONE_BRICK_STAIRS.get());
+		tag(TagInit.Blocks.MOD_STONE_BRICK_WALL)
+			.add(BlockInit.A_I_STONE_BRICK_WALL.get());
 		tag(TagInit.Blocks.MOD_STONE_BUTTONS)
 			.add(BlockInit.A_I_STONE_BUTTON.get());
 		tag(TagInit.Blocks.MOD_STONE_PRESSURE_PLATE)
@@ -186,8 +204,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 		tag(TagInit.Blocks.MOD_STONE_SLAB)
 			.add(BlockInit.A_I_STONE_SLAB.get());
 		tag(TagInit.Blocks.MOD_STONE_STAIRS)
-			.add(BlockInit.A_I_STONE_BRICK_STAIRS.get())
 			.add(BlockInit.A_I_STONE_STAIRS.get());
+		tag(TagInit.Blocks.MOD_STONE_WALL)
+			.add(BlockInit.A_I_STONE_WALL.get());
 		
 		//WOOD TAGS
 	}

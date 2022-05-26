@@ -30,18 +30,18 @@ public class ModItemTagsProvider extends ItemTagsProvider
 		
 		//GENERAL TAGS
 		tag(ItemTags.BUTTONS)
-			.addTag(TagInit.Items.MOD_STONE_BUTTONS);
+			.addTag(TagInit.Items.MOD_BUTTONS);
 		tag(ItemTags.DOORS);
 		tag(ItemTags.FENCES);
 		tag(ItemTags.SLABS)
-			.addTag(TagInit.Items.MOD_STONE_SLAB);
+			.addTag(TagInit.Items.MOD_SLAB);
 		tag(ItemTags.TRAPDOORS);
+		tag(ItemTags.WALLS)
+		.addTag(TagInit.Items.MOD_WALLS);
 		
 		//STONE TAGS
 		tag(ItemTags.STONE_BRICKS)
 			.addTag(TagInit.Items.MOD_STONE_BRICKS);
-		tag(ItemTags.WALLS)
-			.addTag(TagInit.Items.MOD_WALLS);
 		
 		//WOOD TAGS
 		tag(ItemTags.LEAVES);
@@ -60,24 +60,33 @@ public class ModItemTagsProvider extends ItemTagsProvider
 		// FORGE TAGS
 		
 		//WORLD GEN TAGS
-		tag(Tags.Items.ORES_IN_GROUND_DEEPSLATE);
-		tag(Tags.Items.ORES_IN_GROUND_STONE);
-		tag(Tags.Items.ORE_RATES_SINGULAR);
+		tag(Tags.Items.ORES_IN_GROUND_DEEPSLATE)
+			.addTag(TagInit.Items.MOD_STONE_ORE_DEEPSLATE);
+		tag(Tags.Items.ORES_IN_GROUND_STONE)
+			.addTag(TagInit.Items.MOD_STONE_ORE_STONE);
+		tag(Tags.Items.ORE_RATES_SINGULAR)
+			.addTag(TagInit.Items.MOD_STONE_ORE_DEEPSLATE)
+			.addTag(TagInit.Items.MOD_STONE_ORE_STONE);
 	
 		//ORE TAGS
-		tag(Tags.Items.ORES);
+		tag(Tags.Items.ORES)
+			.addTag(TagInit.Items.MOD_STONE_ORE_DEEPSLATE)
+			.addTag(TagInit.Items.MOD_STONE_ORE_STONE);
 		
 		//GENERAL TAGS
 		tag(Tags.Items.DUSTS);
 		tag(Tags.Items.FENCE_GATES);
 		tag(Tags.Items.FENCES);
-		tag(Tags.Items.GEMS);
+		tag(Tags.Items.GEMS)
+			.addTag(TagInit.Items.MOD_GEM);
 		
 		//STORAGE BLOCK TAGS
-		tag(Tags.Items.STORAGE_BLOCKS);
+		tag(Tags.Items.STORAGE_BLOCKS)
+			.addTag(TagInit.Items.MOD_STORAGE_BLOCK);
 		
 		//STONE TAGS
-		tag(Tags.Items.STONE);
+		tag(Tags.Items.STONE)
+			.addTag(TagInit.Items.MOD_STONE);
 		
 		//WOOD TAGS
 		tag(Tags.Items.FENCE_GATES_WOODEN);
@@ -90,17 +99,31 @@ public class ModItemTagsProvider extends ItemTagsProvider
 		tag(TagInit.Items.MOD_BUTTONS)
 			.addTag(TagInit.Items.MOD_STONE_BUTTONS);
 		tag(TagInit.Items.MOD_DOORS);
+		tag(TagInit.Items.MOD_GEM)
+			.addTag(TagInit.Items.EXAMPLE_ITEM);
 		tag(TagInit.Items.MOD_PRESSURE_PLATE)
 			.addTag(TagInit.Items.MOD_STONE_PRESSURE_PLATE);
 		tag(TagInit.Items.MOD_SLAB)
-			.addTag(TagInit.Items.MOD_STONE_SLAB);
+			.addTag(TagInit.Items.MOD_STONE_SLAB)
+			.addTag(TagInit.Items.MOD_STONE_BRICK_SLAB);
 		tag(TagInit.Items.MOD_STAIRS)
-			.addTag(TagInit.Items.MOD_STONE_STAIRS);
+			.addTag(TagInit.Items.MOD_STONE_STAIRS)
+			.addTag(TagInit.Items.MOD_STONE_BRICK_STAIRS);
+		tag(TagInit.Items.MOD_STORAGE_BLOCK)
+			.addTag(TagInit.Items.EXAMPLE_BLOCK);
+		tag(TagInit.Items.MOD_WALLS)
+			.addTag(TagInit.Items.MOD_STONE_BRICK_WALL)
+			.addTag(TagInit.Items.MOD_STONE_WALL);
 		
 		//ORE TAGS
 		tag(TagInit.Items.MOD_STONE_ORE_DEEPSLATE)
-			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
+			.addTag(TagInit.Items.DEEPSLATE_EXAMPLE_ORE);
 		tag(TagInit.Items.MOD_STONE_ORE_STONE)
+			.addTag(TagInit.Items.EXAMPLE_ORE);
+	
+		tag(TagInit.Items.DEEPSLATE_EXAMPLE_ORE)
+			.add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
+		tag(TagInit.Items.EXAMPLE_ORE)
 			.add(BlockInit.EXAMPLE_ORE.get().asItem());
 		
 		//RUNE PATTERN TAGS
@@ -133,7 +156,13 @@ public class ModItemTagsProvider extends ItemTagsProvider
 		tag(TagInit.Items.MOD_STONE)
 			.add(BlockInit.A_I_STONE.get().asItem());
 		tag(TagInit.Items.MOD_STONE_BRICKS)
-			.add(BlockInit.A_I_STONE_BRICK.get().asItem());
+			.add(BlockInit.A_I_STONE_BRICKS.get().asItem());
+		tag(TagInit.Items.MOD_STONE_BRICK_SLAB)
+			.add(BlockInit.A_I_STONE_BRICK_SLAB.get().asItem());
+		tag(TagInit.Items.MOD_STONE_BRICK_STAIRS)
+			.add(BlockInit.A_I_STONE_BRICK_STAIRS.get().asItem());
+		tag(TagInit.Items.MOD_STONE_BRICK_WALL)
+			.add(BlockInit.A_I_STONE_BRICK_WALL.get().asItem());
 		tag(TagInit.Items.MOD_STONE_BUTTONS)
 			.add(BlockInit.A_I_STONE_BUTTON.get().asItem());
 		tag(TagInit.Items.MOD_STONE_PRESSURE_PLATE)
@@ -142,7 +171,7 @@ public class ModItemTagsProvider extends ItemTagsProvider
 			.add(BlockInit.A_I_STONE_SLAB.get().asItem());
 		tag(TagInit.Items.MOD_STONE_STAIRS)
 			.add(BlockInit.A_I_STONE_STAIRS.get().asItem());
-		tag(TagInit.Items.MOD_WALLS)
+		tag(TagInit.Items.MOD_STONE_WALL)
 			.add(BlockInit.A_I_STONE_WALL.get().asItem());
 		
 		//WOOD TAGS

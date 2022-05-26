@@ -68,8 +68,7 @@ public class ModItemModelProvider extends ItemModelProvider
 		
 		// BLOCKS
 		
-		//EXAMPLE BLOCKS
-		simpleBlockItem(BlockInit.EXAMPLE_BLOCK.get().asItem());
+		//ORE BLOCKS
 		simpleBlockItem(BlockInit.EXAMPLE_ORE.get().asItem());
 		simpleBlockItem(BlockInit.DEEPSLATE_EXAMPLE_ORE.get().asItem());
 		
@@ -77,13 +76,20 @@ public class ModItemModelProvider extends ItemModelProvider
 		simpleBlockItem(BlockInit.A_I_CHISELED_STONE_BRICKS.get().asItem());
 		simpleBlockItem(BlockInit.A_I_CRACKED_STONE_BRICKS.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_BRICK.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_BRICKS.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_BRICK_SLAB.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE_BRICK_STAIRS.get().asItem());
+		simpleBlockItem(BlockInit.A_I_STONE_BRICK_WALL.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE_BUTTON.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE_PRESSURE_PLATE.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE_SLAB.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE_STAIRS.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE_WALL.get().asItem());
+		
+		//WOOD
+		
+		//STORAGE BLOCKS
+		simpleBlockItem(BlockInit.EXAMPLE_BLOCK.get().asItem());
 	}
 	
 }

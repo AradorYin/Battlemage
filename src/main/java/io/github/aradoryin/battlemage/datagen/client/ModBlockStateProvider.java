@@ -38,10 +38,12 @@ public class ModBlockStateProvider extends BlockStateProvider
 		simpleBlock(BlockInit.A_I_CHISELED_STONE_BRICKS.get());
 		simpleBlock(BlockInit.A_I_CRACKED_STONE_BRICKS.get());
 		simpleBlock(BlockInit.A_I_STONE.get());
-		simpleBlock(BlockInit.A_I_STONE_BRICK.get());
+		simpleBlock(BlockInit.A_I_STONE_BRICKS.get());
+		slabBlock((SlabBlock) BlockInit.A_I_STONE_BRICK_SLAB.get(), blockTexture(BlockInit.A_I_STONE.get()), blockTexture(BlockInit.A_I_STONE.get())); // where *SlabBlock* | DoubleSlab Texture | ResourceLocation Texture
 		slabBlock((SlabBlock) BlockInit.A_I_STONE_SLAB.get(), blockTexture(BlockInit.A_I_STONE.get()), blockTexture(BlockInit.A_I_STONE.get())); // where *SlabBlock* | DoubleSlab Texture | ResourceLocation Texture
 		stairsBlock((StairBlock) BlockInit.A_I_STONE_BRICK_STAIRS.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *StairBlock* | ResourceLocation Texture
 		stairsBlock((StairBlock) BlockInit.A_I_STONE_STAIRS.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *StairBlock* | ResourceLocation Texture
+		wallBlock((WallBlock) BlockInit.A_I_STONE_BRICK_WALL.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *WallBlock* | ResourceLocation Texture
 		wallBlock((WallBlock) BlockInit.A_I_STONE_WALL.get(), blockTexture(BlockInit.A_I_STONE.get())); // where *WallBlock* | ResourceLocation Texture
 	}
 	

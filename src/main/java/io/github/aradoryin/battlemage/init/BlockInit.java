@@ -68,13 +68,25 @@ public class BlockInit
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Block> A_I_STONE_BRICK = register("a_i_stone_bricks", 
+	public static final RegistryObject<Block> A_I_STONE_BRICKS = register("a_i_stone_bricks", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Block> A_I_STONE_BRICK_STAIRS = register("a_i_stone_stairs", 
+	public static final RegistryObject<Block> A_I_STONE_BRICK_SLAB = register("a_i_stone_brick_slab", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_BRICK_STAIRS = register("a_i_stone_brick_stairs", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+					.strength(3.0f)
+					.sound(SoundType.STONE)
+					.requiresCorrectToolForDrops()), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Block> A_I_STONE_BRICK_WALL = register("a_i_stone_brick_wall", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)

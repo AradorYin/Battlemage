@@ -48,8 +48,7 @@ public class ModEnUsProvider extends LanguageProvider
 		
 		// BLOCKS
 		
-		//EXAMPLE BLOCKS
-		add(BlockInit.EXAMPLE_BLOCK.get(), "Example Block");
+		//ORE BLOCKS
 		add(BlockInit.EXAMPLE_ORE.get(), "Example Ore");
 		add(BlockInit.DEEPSLATE_EXAMPLE_ORE.get(), "Deepslate Example Ore");
 		
@@ -57,13 +56,20 @@ public class ModEnUsProvider extends LanguageProvider
 		add(BlockInit.A_I_CHISELED_STONE_BRICKS.get(), "Aether-Infused Chiseled Stone Bricks");
 		add(BlockInit.A_I_CRACKED_STONE_BRICKS.get(), "Aether-Infused Cracked Stone Bricks");
 		add(BlockInit.A_I_STONE.get(), "Aether-Infused Stone");
-		add(BlockInit.A_I_STONE_BRICK.get(), "Aether-Infused Stone Bricks");
+		add(BlockInit.A_I_STONE_BRICKS.get(), "Aether-Infused Stone Bricks");
+		add(BlockInit.A_I_STONE_BRICK_SLAB.get(), "Aether-Infused Stone Brick Slab");
 		add(BlockInit.A_I_STONE_BRICK_STAIRS.get(), "Aether-Infused Stone Bricks Stairs");
+		add(BlockInit.A_I_STONE_BRICK_WALL.get(), "Aether-Infused Stone Brick Wall");
 		add(BlockInit.A_I_STONE_BUTTON.get(), "Aether-Infused Stone Button");
 		add(BlockInit.A_I_STONE_PRESSURE_PLATE.get(), "Aether-Infused Stone Pressure Plate");
 		add(BlockInit.A_I_STONE_SLAB.get(), "Aether-Infused Stone Slab");
 		add(BlockInit.A_I_STONE_STAIRS.get(), "Aether-Infused Stone Stairs");
 		add(BlockInit.A_I_STONE_WALL.get(), "Aether-Infused Stone Wall");
+		
+		//WOOD
+		
+		//STORAGE BLOCKS
+		add(BlockInit.EXAMPLE_BLOCK.get(), "Example Block");
 	}
 
 }
