@@ -8,10 +8,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModItemModelProvider extends ItemModelProvider
 {
+	ModelProvider modelProvider;
 
 	public ModItemModelProvider(DataGenerator generator, ExistingFileHelper helper)
 	{
@@ -21,6 +23,60 @@ public class ModItemModelProvider extends ItemModelProvider
 	protected void simpleBlockItem(Item item)
 	{
 		getBuilder(item.getRegistryName().toString()).parent(getExistingFile(modLoc("block/" + item.getRegistryName().getPath())));
+	}
+	
+	protected void blockItemBuilder(Item item, Item parent)
+	{
+		getBuilder(item.getRegistryName().toString()).parent(getExistingFile(modLoc("block/" + parent.getRegistryName().getPath())));
+	}
+	
+	protected void buttonBuilder(Item item, Item parent)
+	{
+		button(item.getRegistryName().toString(), modLoc("block/" + parent.getRegistryName().getPath()));
+		buttonPressed(item.getRegistryName().toString(), modLoc("block/" + parent.getRegistryName().getPath()));
+		buttonInventory(item.getRegistryName().toString(), modLoc("block/" + parent.getRegistryName().getPath()));
+	}
+	
+	protected void pressurePlateBuilder(Item item, Item parent)
+	{
+		pressurePlate(item.getRegistryName().toString(), mcLoc(Battlemage.MOD_ID.toString() + ":block/" + parent.getRegistryName().getPath()));
+		pressurePlateDown(item.getRegistryName().toString(), mcLoc(Battlemage.MOD_ID.toString() + ":block/" + parent.getRegistryName().getPath()));
+	}
+	
+	protected void slabBuilder(Item item, Item parent)
+	{
+		slab(item.getRegistryName().toString(), 
+				modLoc("block/" + parent.getRegistryName().getPath()), 
+				modLoc("block/" + parent.getRegistryName().getPath()),
+				modLoc("block/" + parent.getRegistryName().getPath()));
+		slabTop(item.getRegistryName().toString(), 
+				modLoc("block/" + parent.getRegistryName().getPath()), 
+				modLoc("block/" + parent.getRegistryName().getPath()),
+				modLoc("block/" + parent.getRegistryName().getPath()));
+	}
+	
+	protected void stairBuilder(Item item, Item parent)
+	{
+		stairs(item.getRegistryName().toString(), 
+				modLoc("block/" + parent.getRegistryName().getPath()), 
+				modLoc("block/" + parent.getRegistryName().getPath()),
+				modLoc("block/" + parent.getRegistryName().getPath()));
+		stairsInner(item.getRegistryName().toString(), 
+				modLoc("block/" + parent.getRegistryName().getPath()), 
+				modLoc("block/" + parent.getRegistryName().getPath()),
+				modLoc("block/" + parent.getRegistryName().getPath()));
+		stairsOuter(item.getRegistryName().toString(), 
+				modLoc("block/" + parent.getRegistryName().getPath()), 
+				modLoc("block/" + parent.getRegistryName().getPath()),
+				modLoc("block/" + parent.getRegistryName().getPath()));
+	}
+	
+	protected void wallBuilder(Item item, Item parent)
+	{
+		wallPost(item.getRegistryName().toString(), modLoc("block/" + parent.getRegistryName().getPath()));
+		wallSide(item.getRegistryName().toString(), modLoc("block/" + parent.getRegistryName().getPath()));
+		wallSideTall(item.getRegistryName().toString(), modLoc("block/" + parent.getRegistryName().getPath()));
+		wallInventory(item.getRegistryName().toString(), modLoc("block/" + parent.getRegistryName().getPath()));
 	}
 	
 	private ItemModelBuilder simpleItem(Item item)
@@ -77,14 +133,14 @@ public class ModItemModelProvider extends ItemModelProvider
 		simpleBlockItem(BlockInit.A_I_CRACKED_STONE_BRICKS.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE.get().asItem());
 		simpleBlockItem(BlockInit.A_I_STONE_BRICKS.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_BRICK_SLAB.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_BRICK_STAIRS.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_BRICK_WALL.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_BUTTON.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_PRESSURE_PLATE.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_SLAB.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_STAIRS.get().asItem());
-		simpleBlockItem(BlockInit.A_I_STONE_WALL.get().asItem());
+		buttonBuilder(BlockInit.A_I_STONE_BUTTON.get().asItem(), BlockInit.A_I_STONE.get().asItem());
+		pressurePlateBuilder(BlockInit.A_I_STONE_PRESSURE_PLATE.get().asItem(), BlockInit.A_I_STONE.get().asItem());
+		stairBuilder(BlockInit.A_I_STONE_BRICK_STAIRS.get().asItem(), BlockInit.A_I_STONE_BRICKS.get().asItem());
+		stairBuilder(BlockInit.A_I_STONE_STAIRS.get().asItem(), BlockInit.A_I_STONE.get().asItem());
+		slabBuilder(BlockInit.A_I_STONE_BRICK_SLAB.get().asItem(), BlockInit.A_I_STONE_BRICKS.get().asItem());
+		slabBuilder(BlockInit.A_I_STONE_SLAB.get().asItem(), BlockInit.A_I_STONE.get().asItem());
+		wallBuilder(BlockInit.A_I_STONE_BRICK_WALL.get().asItem(), BlockInit.A_I_STONE_BRICKS.get().asItem());
+		wallBuilder(BlockInit.A_I_STONE_WALL.get().asItem(), BlockInit.A_I_STONE.get().asItem());
 		
 		//WOOD
 		

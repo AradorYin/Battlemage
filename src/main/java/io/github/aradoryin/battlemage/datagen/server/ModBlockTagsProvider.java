@@ -54,8 +54,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider
 		tag(BlockTags.BUTTONS)
 			.addTag(TagInit.Blocks.MOD_BUTTONS);
 		tag(BlockTags.CROPS);
-		tag(BlockTags.DOORS)
-			.addTag(TagInit.Blocks.MOD_DOORS);
+		tag(BlockTags.DOORS);
 		tag(BlockTags.FENCE_GATES);
 		tag(BlockTags.FENCES);
 		tag(BlockTags.PRESSURE_PLATES)
