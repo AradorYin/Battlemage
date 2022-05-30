@@ -90,7 +90,7 @@ public class BlockInit
 			() -> new StairBlock(A_I_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
-					.requiresCorrectToolForDrops()), 
+					.requiresCorrectToolForDrops()),
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 	public static final RegistryObject<WallBlock> A_I_STONE_BRICK_WALL = register("a_i_stone_brick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE)

@@ -139,4 +139,9 @@ public class ItemInit
 		return ITEMS.register(name, item);
 	}
 	
+	private static void registerMultiItem(final String name)
+	{
+		RegistryObject<Item> tempItem;
+	}
+	
 }

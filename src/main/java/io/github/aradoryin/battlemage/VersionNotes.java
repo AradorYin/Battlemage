@@ -26,9 +26,12 @@ public class VersionNotes
 	 * > Recipes for: Stone
 	 * !--!
 	 * 
+	 * !-Done-!
 	 * Version 0.3.0
+	 * !--!
 	 * > Add textures for Tablet
 	 * > Add Tablet
+	 * ----> HashMap<Quality, Item> SWORD_THING = registerMultiItem("sword_thing");  { SWORD_THING.get(Quality.RARE).doThingWitItemCode(); }
 	 * > Add textures for Bracer
 	 * > Add Bracer
 	 * > Recipes for Tablet|Aether-Infused Tablet|Bracer
