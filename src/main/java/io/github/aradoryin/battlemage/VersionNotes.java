@@ -30,11 +30,13 @@ public class VersionNotes
 	 * Version 0.3.0
 	 * !--!
 	 * > Add textures for Tablet
+	 * !--!
 	 * > Add Tablet
 	 * ----> HashMap<Quality, Item> SWORD_THING = registerMultiItem("sword_thing");  { SWORD_THING.get(Quality.RARE).doThingWitItemCode(); }
 	 * > Add textures for Bracer
 	 * > Add Bracer
 	 * > Recipes for Tablet|Aether-Infused Tablet|Bracer
+	 * > Add Particle System
 	 * 
 	 * Version 0.4.0
 	 * > Add textures for Gem Ores

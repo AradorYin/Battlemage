@@ -56,75 +56,75 @@ public class BlockInit
 	// !!--------------------------------------------!!
 
 	// STONE
-	public static final RegistryObject<Block> A_I_STONE = register("a_i_stone", 
+	public static final RegistryObject<Block> A_I_STONE = register("aether_infused_stone", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Block> A_I_STONE_BRICKS = register("a_i_stone_bricks", 
+	public static final RegistryObject<Block> A_I_STONE_BRICKS = register("aether_infused_stone_bricks", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Block> A_I_CHISELED_STONE_BRICKS = register("a_i_chiseled_stone_bricks", 
+	public static final RegistryObject<Block> A_I_CHISELED_STONE_BRICKS = register("aether_infused_chiseled_stone_bricks", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<Block> A_I_CRACKED_STONE_BRICKS = register("a_i_cracked_stone_bricks", 
+	public static final RegistryObject<Block> A_I_CRACKED_STONE_BRICKS = register("aether_infused_cracked_stone_bricks", 
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<SlabBlock> A_I_STONE_BRICK_SLAB = register("a_i_stone_brick_slab", 
+	public static final RegistryObject<SlabBlock> A_I_STONE_BRICK_SLAB = register("aether_infused_stone_brick_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<StairBlock> A_I_STONE_BRICK_STAIRS = register("a_i_stone_brick_stairs", 
+	public static final RegistryObject<StairBlock> A_I_STONE_BRICK_STAIRS = register("aether_infused_stone_brick_stairs", 
 			() -> new StairBlock(A_I_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()),
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<WallBlock> A_I_STONE_BRICK_WALL = register("a_i_stone_brick_wall", 
+	public static final RegistryObject<WallBlock> A_I_STONE_BRICK_WALL = register("aether_infused_stone_brick_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<ButtonBlock> A_I_STONE_BUTTON = register("a_i_stone_button", 
+	public static final RegistryObject<ButtonBlock> A_I_STONE_BUTTON = register("aether_infused_stone_button", 
 			() -> new ModButtonBlock(false, BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()
 					.noCollission()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<PressurePlateBlock> A_I_STONE_PRESSURE_PLATE = register("a_i_stone_pressure_plate", 
+	public static final RegistryObject<PressurePlateBlock> A_I_STONE_PRESSURE_PLATE = register("aether_infused_stone_pressure_plate", 
 			() -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()
 					.noCollission()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<SlabBlock> A_I_STONE_SLAB = register("a_i_stone_slab", 
+	public static final RegistryObject<SlabBlock> A_I_STONE_SLAB = register("aether_infused_stone_slab", 
 			() -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<StairBlock> A_I_STONE_STAIRS = register("a_i_stone_stairs", 
+	public static final RegistryObject<StairBlock> A_I_STONE_STAIRS = register("aether_infused_stone_stairs", 
 			() -> new StairBlock(A_I_STONE.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)
 					.requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
-	public static final RegistryObject<WallBlock> A_I_STONE_WALL = register("a_i_stone_wall", 
+	public static final RegistryObject<WallBlock> A_I_STONE_WALL = register("aether_infused_stone_wall", 
 			() -> new WallBlock(BlockBehaviour.Properties.of(Material.STONE)
 					.strength(3.0f)
 					.sound(SoundType.STONE)

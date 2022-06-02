@@ -121,6 +121,17 @@ public class ModItemModelProvider extends ItemModelProvider
 		simpleItem(ItemInit.PATTERN_ELEMENT_NECROMANCY.get());
 		simpleItem(ItemInit.PATTERN_ELEMENT_PHASE.get());
 		
+		//TABLETS
+		simpleItem(ItemInit.TABLET_STONE.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED_AOE.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED_LOB.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED_NOVA.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED_POOL.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED_RAY.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED_TARGETED.get());
+		simpleItem(ItemInit.TABLET_STONE_RUNED_TRAP.get());
+		
 		
 		// BLOCKS
 		

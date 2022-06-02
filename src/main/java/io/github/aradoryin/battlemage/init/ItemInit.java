@@ -46,6 +46,16 @@ public class ItemInit
 	//SHIELD
 	public static final RegistryObject<Item> PATTERN_RUNE_NOVA = register("pattern_rune_nova", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
 
+	//TABLETS
+	public static final RegistryObject<Item> TABLET_STONE = register("tablet_stone", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> TABLET_STONE_RUNED = register("tablet_stone_runed", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));
+	public static final RegistryObject<Item> TABLET_STONE_RUNED_TARGETED = register("tablet_stone_runed_targeted", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));	
+	public static final RegistryObject<Item> TABLET_STONE_RUNED_RAY = register("tablet_stone_runed_ray", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));	
+	public static final RegistryObject<Item> TABLET_STONE_RUNED_LOB = register("tablet_stone_runed_lob", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));	
+	public static final RegistryObject<Item> TABLET_STONE_RUNED_AOE = register("tablet_stone_runed_aoe", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));	
+	public static final RegistryObject<Item> TABLET_STONE_RUNED_POOL = register("tablet_stone_runed_pool", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));	
+	public static final RegistryObject<Item> TABLET_STONE_RUNED_TRAP = register("tablet_stone_runed_trap", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));	
+	public static final RegistryObject<Item> TABLET_STONE_RUNED_NOVA = register("tablet_stone_runed_nova", ()-> new Item(new Item.Properties().tab(Battlemage.BATTLEMAGE_TAB)));	
 	/*
 	 * TABLETS:
 	 * Stone Tablet -> Upgraded to Aether-Infused Tablet
@@ -134,12 +144,12 @@ public class ItemInit
 	 * Quality -> Dependent on GemQuality used
 	 */
 	
-	private static <T extends Item> RegistryObject<Item> register(final String name, final Supplier<T> item)
+	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item)
 	{
 		return ITEMS.register(name, item);
 	}
 	
-	private static void registerMultiItem(final String name)
+	private static void registerTabletOutputItem(final String name)
 	{
 		RegistryObject<Item> tempItem;
 	}

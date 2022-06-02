@@ -45,6 +45,17 @@ public class ModEnUsProvider extends LanguageProvider
 		add(ItemInit.PATTERN_ELEMENT_NECROMANCY.get(), "Necromancy Pattern");
 		add(ItemInit.PATTERN_ELEMENT_PHASE.get(), "Phase Pattern");
 		
+		//TABLETS
+		add(ItemInit.TABLET_STONE.get(), "Stone Tablet");
+		add(ItemInit.TABLET_STONE_RUNED.get(), "Runed Tablet");
+		add(ItemInit.TABLET_STONE_RUNED_AOE.get(), "AoE Runed Tablet");
+		add(ItemInit.TABLET_STONE_RUNED_LOB.get(), "Lob Runed Tablet");
+		add(ItemInit.TABLET_STONE_RUNED_NOVA.get(), "Nova Runed Tablet");
+		add(ItemInit.TABLET_STONE_RUNED_POOL.get(), "Pool Runed Tablet");
+		add(ItemInit.TABLET_STONE_RUNED_RAY.get(), "Ray Runed Tablet");
+		add(ItemInit.TABLET_STONE_RUNED_TARGETED.get(), "Targeted Runed Tablet");
+		add(ItemInit.TABLET_STONE_RUNED_TRAP.get(), "Trap Runed Tablet");
+		
 		
 		// BLOCKS
 		
