@@ -16,6 +16,6 @@ public enum AugmentType
 	
 	CONTROL,
 	MASTERY,
-	DESTRUCTION;
+	INTENSITY;
 	
 }

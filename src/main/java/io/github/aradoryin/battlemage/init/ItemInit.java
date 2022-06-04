@@ -103,13 +103,13 @@ public class ItemInit
 	 * -> Quartz Powder -> Harder hitting AugmentType.CONTROL
 	 * -> Diamond Powder -> Longer lasting AugmentType.CONTROL
 	 * -> Sapphire Powder -> More focused AugmentType.CONTROL
-	 * -> Ruby Powder -> Harder hitting AugmentType.DESTRUCTION
-	 * -> Onyx Powder -> Longer lasting AugmentType.DESTRUCTION
-	 * -> Citrine Powder -> More focused AugmentType.DESTRUCTION
+	 * -> Ruby Powder -> Harder hitting AugmentType.INTENSITY
+	 * -> Onyx Powder -> Longer lasting AugmentType.INTENSITY
+	 * -> Citrine Powder -> More focused AugmentType.INTENSITY
 	 * 
 	 * > Higher chance on using/obtaining AugmentType.MASTERY elements: Amethyst | Emerald | Nether Star
 	 * > Higher chance on using/obtaining AugmentType.CONTROL elements: Diamond | Quartz | Sapphire
-	 * > Higher chance on using/obtaining AugmentType.DESTRUCTION elements: Ruby | Onyx | Citrine
+	 * > Higher chance on using/obtaining AugmentType.INTENSITY elements: Ruby | Onyx | Citrine
 	 */
 	
 	/*
@@ -119,9 +119,9 @@ public class ItemInit
 	
 	/*
 	 * GEMS:
-	 * Onyx -> Longer lasting AugmentType.DESTRUCTION spells
-	 * Ruby -> Harder hitting AugmentType.DESTRUCTION spells
-	 * Citrine -> More focused AugmentType.DESTRUCTION spells
+	 * Onyx -> Longer lasting AugmentType.INTENSITY spells
+	 * Ruby -> Harder hitting AugmentType.INTENSITY spells
+	 * Citrine -> More focused AugmentType.INTENSITY spells
 	 * Sapphire -> More focused AugmentType.CONTROL spells
 	 * Diamond -> Longer lasting AugmentType.CONTROL spells
 	 * Quartz -> Harder hitting AugmentType.CONTROL spells
@@ -131,7 +131,7 @@ public class ItemInit
 	 * 
 	 * > Higher chance on using/obtaining AugmentType.MASTERY elements: Amethyst | Emerald | Nether Star
 	 * > Higher chance on using/obtaining AugmentType.CONTROL elements: Diamond | Quartz | Sapphire
-	 * > Higher chance on using/obtaining AugmentType.DESTRUCTION elements: Ruby | Onyx | Citrine
+	 * > Higher chance on using/obtaining AugmentType.INTENSITY elements: Ruby | Onyx | Citrine
 	 * 
 	 * > Quality:
 	 * -> Raw < Uncut 
