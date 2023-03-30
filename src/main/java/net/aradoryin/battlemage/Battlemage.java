@@ -3,11 +3,9 @@ package net.aradoryin.battlemage;
 import com.mojang.logging.LogUtils;
 import net.aradoryin.battlemage.block.ModBlocks;
 import net.aradoryin.battlemage.item.ModItems;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,11 +22,12 @@ public class Battlemage {
     public Battlemage() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the commonSetup
         modEventBus.addListener(this::commonSetup);
 
-//        ModBlocks.register(modEventBus);
-//        ModItems.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -39,6 +38,13 @@ public class Battlemage {
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
+        if(event.getTab() == ModCreativeModeTabs.BATTLEMAGE_TAB) {
+            event.accept(ModItems.GEM_WIP);
+            event.accept(ModItems.GEODE_WIP);
+            event.accept(ModBlocks.BLOCK_WIP);
+            event.accept(ModBlocks.ORE_WIP);
+            event.accept(ModBlocks.DEEPSLATE_ORE_WIP);
+        }
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
