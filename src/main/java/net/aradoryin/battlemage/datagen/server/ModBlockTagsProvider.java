@@ -50,8 +50,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.DAPHNE_PLANKS.get());
         tag(MOD_SAPLINGS)
                 .add(ModBlocks.DAPHNE_SAPLING.get());
-        tag(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
-                .addTags(MOD_DEEPSLATE_ORES);
+        tag(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         tag(BlockTags.LOGS)
                 .addTags(MOD_LOGS);
         tag(BlockTags.LOGS_THAT_BURN)
@@ -64,8 +63,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTags(MOD_PLANKS);
         tag(BlockTags.SAPLINGS)
                 .addTags(MOD_SAPLINGS);
-        tag(BlockTags.STONE_ORE_REPLACEABLES)
-                .addTags(MOD_ORES);
+        tag(BlockTags.STONE_ORE_REPLACEABLES);
         tag(Tags.Blocks.ORES)
                 .addTags(MOD_DEEPSLATE_ORES, MOD_ORES);
         tag(Tags.Blocks.STORAGE_BLOCKS)
