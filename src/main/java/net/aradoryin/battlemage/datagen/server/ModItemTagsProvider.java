@@ -6,7 +6,6 @@ import net.aradoryin.battlemage.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -23,7 +22,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     public static final TagKey<Item> MOD_DEEPSLATE_ORES = create("mod_deepslate_ores");
     public static final TagKey<Item> MOD_GEMS = create("mod_gems");
     public static final TagKey<Item> MOD_GEODES = create("mod_geodes");
+    public static final TagKey<Item> MOD_LOGS = create("mod_logs");
+    public static final TagKey<Item> MOD_LOGS_THAT_BURN = create("mod_logs");
     public static final TagKey<Item> MOD_ORES = create("mod_ores");
+    public static final TagKey<Item> MOD_PLANKS = create("mod_planks");
 
     public ModItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> lookupBlock, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, lookupBlock, Battlemage.MOD_ID, existingFileHelper);
@@ -32,16 +34,34 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 //        tag(ItemTags.LOGS);
-        tag(ModItemTagsProvider.MOD_BLOCKS)
+        tag(MOD_BLOCKS)
                 .add(ModBlocks.BLOCK_WIP.get().asItem());
-        tag(ModItemTagsProvider.MOD_DEEPSLATE_ORES)
+        tag(MOD_DEEPSLATE_ORES)
                 .add(ModBlocks.DEEPSLATE_ORE_WIP.get().asItem());
-        tag(ModItemTagsProvider.MOD_GEMS)
+        tag(MOD_GEMS)
                 .add(ModItems.GEM_WIP.get());
-        tag(ModItemTagsProvider.MOD_GEODES)
+        tag(MOD_GEODES)
                 .add(ModItems.GEODE_WIP.get());
-        tag(ModItemTagsProvider.MOD_ORES)
+        tag(MOD_LOGS)
+                .add(ModBlocks.DAPHNE_LOG.get().asItem())
+                .add(ModBlocks.DAPHNE_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_DAPHNE_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_DAPHNE_WOOD.get().asItem());
+        tag(MOD_LOGS_THAT_BURN)
+                .add(ModBlocks.DAPHNE_LOG.get().asItem())
+                .add(ModBlocks.DAPHNE_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_DAPHNE_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_DAPHNE_WOOD.get().asItem());
+        tag(MOD_ORES)
                 .add(ModBlocks.ORE_WIP.get().asItem());
+        tag(MOD_PLANKS)
+                .add(ModBlocks.DAPHNE_PLANKS.get().asItem());
+        tag(ItemTags.LOGS)
+                .addTags(MOD_LOGS);
+        tag(ItemTags.LOGS_THAT_BURN)
+                .addTags(MOD_LOGS_THAT_BURN);
+        tag(ItemTags.PLANKS)
+                .addTags(MOD_PLANKS);
         tag(Tags.Items.ORES)
                 .addTags(MOD_DEEPSLATE_ORES, MOD_ORES);
         tag(Tags.Items.STORAGE_BLOCKS)

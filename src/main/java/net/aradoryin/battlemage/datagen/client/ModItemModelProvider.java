@@ -1,10 +1,12 @@
 package net.aradoryin.battlemage.datagen.client;
 
 import net.aradoryin.battlemage.Battlemage;
+import net.aradoryin.battlemage.block.ModBlocks;
 import net.aradoryin.battlemage.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -17,33 +19,20 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        gemItem(ModItems.GEM_WIP);
-        geodeItem(ModItems.GEODE_WIP);
+        simpleItem(ModItems.GEM_WIP);
+        simpleItem(ModItems.GEODE_WIP);
+        saplingItem(ModBlocks.DAPHNE_SAPLING);
     }
 
-    private ItemModelBuilder gemItem(RegistryObject<Item> item) {
-        try {
-            return withExistingParent(item.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(Battlemage.MOD_ID, "item/" + item.getId().getPath()));
-        } catch (IllegalArgumentException e) {
-            System.out.println(e);
-            return withExistingParent(ModItems.GEM_WIP.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(Battlemage.MOD_ID, "item/" + ModItems.GEM_WIP.getId().getPath()));
-        }
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Battlemage.MOD_ID, "block/" + item.getId().getPath()));
     }
-    private ItemModelBuilder geodeItem(RegistryObject<Item> item) {
-        try {
-            return withExistingParent(item.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(Battlemage.MOD_ID, "item/" + item.getId().getPath()));
-        } catch (IllegalArgumentException e) {
-            System.out.println(e);
-            return withExistingParent(ModItems.GEODE_WIP.getId().getPath(),
-                    new ResourceLocation("item/generated")).texture("layer0",
-                    new ResourceLocation(Battlemage.MOD_ID, "item/" + ModItems.GEODE_WIP.getId().getPath()));
-        }
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Battlemage.MOD_ID, "item/" + item.getId().getPath()));
     }
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),

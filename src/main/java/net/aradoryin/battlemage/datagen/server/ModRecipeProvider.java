@@ -7,6 +7,7 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -25,6 +26,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleBlastingRecipe(consumer, ModBlocks.ORE_WIP.get(), ModItems.GEODE_WIP.get(), 2f, 180);
         simpleBlastingRecipe(consumer, ModBlocks.DEEPSLATE_ORE_WIP.get(), ModItems.GEODE_WIP.get(), 2f, 180);
         // CAMPFIRE
+        // PLANK
+        simpleLogToPlanksRecipe(consumer, ModBlocks.DAPHNE_LOG.get(), ModBlocks.DAPHNE_PLANKS.get(), 4);
+        simpleLogToPlanksRecipe(consumer, ModBlocks.STRIPPED_DAPHNE_LOG.get(), ModBlocks.DAPHNE_PLANKS.get(), 4);
         // SHAPELESS CRAFTING
         shapelessRecipe(consumer, RecipeCategory.MISC, ModItems.GEM_WIP.get(), 9, ModBlocks.BLOCK_WIP.get());
         // SMELTING
@@ -34,6 +38,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // SMOKING
         // STORAGE BLOCKS
         storageBlockRecipe(consumer, ModItems.GEM_WIP.get(), ModBlocks.BLOCK_WIP.get());
+        // WOOD
+        simpleLogToWoodRecipe(consumer, ModBlocks.DAPHNE_LOG.get(), ModBlocks.DAPHNE_WOOD.get(), 3);
+        simpleLogToWoodRecipe(consumer, ModBlocks.STRIPPED_DAPHNE_LOG.get(), ModBlocks.STRIPPED_DAPHNE_WOOD.get(), 3);
     }
     /*
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GEM_WIP.get())
@@ -52,11 +59,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
 
     /**
-     * This is a complex recipe method for any Shapeless Crafting in the 2x2 or 3x3 crafting GUI.
+     * This is a complex recipe method for any Shapeless Crafting in the 2x2 or 3x3 crafting GUI using only 1-4 inputs.
      *
      * This method is complex and therefore takes in a RecipeConsumer consumer, a RecipeCategory RecipeCategory.X where 'X' equals the location where
      * you want this recipe to go, ItemLike output for the final Item/Block of the craft, int outputAmount for how many outputs to give the player,
-     * ItemLike... inputs for an input array. The max usable number of inputs is 9.
+     * ItemLike... inputs for an input array. The max usable number of inputs is 4.
      * @param recipeConsumer consumer
      * @param recipeCategory RecipeCategory.MISC
      * @param output ModItems.GEM_WIP.get()
@@ -86,36 +93,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2]).requires(inputs[3])
                         .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
                         .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
-            case 5:
-                ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2]).requires(inputs[3])
-                        .requires(inputs[4])
-                        .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
-                break;
-            case 6:
-                ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2]).requires(inputs[3])
-                        .requires(inputs[4]).requires(inputs[5])
-                        .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
-                break;
-            case 7:
-                ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2]).requires(inputs[3])
-                        .requires(inputs[4]).requires(inputs[5]).requires(inputs[6])
-                        .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
-                break;
-            case 8:
-                ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2]).requires(inputs[3])
-                        .requires(inputs[4]).requires(inputs[5]).requires(inputs[6]).requires(inputs[7])
-                        .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
-                break;
-            case 9:
-                ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2]).requires(inputs[3])
-                        .requires(inputs[4]).requires(inputs[5]).requires(inputs[6]).requires(inputs[7]).requires(inputs[8])
-                        .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
-                break;
             default:
         }
     }
@@ -133,8 +110,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_" + getItemName(input), inventoryTrigger(ItemPredicate.Builder.item().of(input).build())).save(recipeConsumer,
                         new ResourceLocation(Battlemage.MOD_ID, getItemName(input) + "_blasting"));
     }
+
     /**
-     * This recipe method is intended for simple Furnace recipes.
+     * This is a simple recipe method for turning Logs into Planks.
+     * @param recipeConsumer consumer
+     * @param input ModBlocks.DAPHNE_LOG.get()
+     * @param output ModBlocks.DAPHNE_PLANKS.get()
+     * @param outputAmount 4
+     */
+    private void simpleLogToPlanksRecipe(Consumer<FinishedRecipe> recipeConsumer, ItemLike input, ItemLike output, int outputAmount) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, output, outputAmount).requires(input)
+                .unlockedBy("has_" + getItemName(input), inventoryTrigger(ItemPredicate.Builder.item().of(input).build()))
+                .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(input) + "_to_planks"));
+    }
+
+    /**
+     * This is a simple recipe method for turning Logs into Wood
+     * @param recipeConsumer
+     * @param input
+     * @param output
+     * @param outputAmount
+     */
+    private void simpleLogToWoodRecipe(Consumer<FinishedRecipe> recipeConsumer, ItemLike input, ItemLike output, int outputAmount) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, output, outputAmount)
+                .define('L', input)
+                .pattern("LL")
+                .pattern("LL")
+                .unlockedBy("has_" + getItemName(input), inventoryTrigger(ItemPredicate.Builder.item().of(input).build()))
+                .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(input) + "_to_wood"));
+    }
+    /**
+     * This is a simple recipe method intended for simple Furnace recipes.
      * @param recipeConsumer consumer
      * @param input ModBlocks.ORE_WIP.get()
      * @param output ModItems.GEODE_WIP.get()
@@ -149,7 +155,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     /**
-     * This recipe method is intended for simple Storage Block Recipes.
+     * This is a recipe method intended for simple Storage Block Recipes.
      * @param recipeConsumer consumer
      * @param input ModItems.GEM_WIP.get()
      * @param output ModBlocks.BLOCK_WIP.get()

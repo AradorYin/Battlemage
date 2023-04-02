@@ -44,6 +44,13 @@ public class Battlemage {
             event.accept(ModBlocks.BLOCK_WIP);
             event.accept(ModBlocks.ORE_WIP);
             event.accept(ModBlocks.DEEPSLATE_ORE_WIP);
+            event.accept(ModBlocks.DAPHNE_LOG);
+            event.accept(ModBlocks.DAPHNE_WOOD);
+            event.accept(ModBlocks.STRIPPED_DAPHNE_LOG);
+            event.accept(ModBlocks.STRIPPED_DAPHNE_WOOD);
+            event.accept(ModBlocks.DAPHNE_PLANKS);
+            event.accept(ModBlocks.DAPHNE_SAPLING);
+            event.accept(ModBlocks.DAPHNE_LEAVES);
         }
     }
 
