@@ -7,7 +7,6 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -19,10 +18,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(output);
     }
 
+    // TODO BLOCK_x -> Crafted from SHARD_xX4
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         // BLASTING
-        simpleBlastingRecipe(consumer, ModItems.GEODE_WIP.get(), ModItems.GEM_WIP.get(), 2f, 180);
         simpleBlastingRecipe(consumer, ModBlocks.ORE_WIP.get(), ModItems.GEODE_WIP.get(), 2f, 180);
         simpleBlastingRecipe(consumer, ModBlocks.DEEPSLATE_ORE_WIP.get(), ModItems.GEODE_WIP.get(), 2f, 180);
         // CAMPFIRE
@@ -32,7 +31,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // SHAPELESS CRAFTING
         shapelessRecipe(consumer, RecipeCategory.MISC, ModItems.GEM_WIP.get(), 9, ModBlocks.BLOCK_WIP.get());
         // SMELTING
-        simpleSmeltingRecipe(consumer, ModItems.GEODE_WIP.get(), ModItems.GEM_WIP.get(), 1f, 200);
         simpleSmeltingRecipe(consumer, ModBlocks.ORE_WIP.get(), ModItems.GEODE_WIP.get(), 1f, 200);
         simpleSmeltingRecipe(consumer, ModBlocks.DEEPSLATE_ORE_WIP.get(), ModItems.GEODE_WIP.get(), 1f, 200);
         // SMOKING

@@ -19,12 +19,55 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.GEM_WIP);
+        // CLUSTERS
+        blockItem(ModBlocks.AQUAMARINE_CLUSTER);
+        blockItem(ModBlocks.CITRINE_CLUSTER);
+        blockItem(ModBlocks.GARNET_CLUSTER);
+        blockItem(ModBlocks.OPAL_CLUSTER);
+        blockItem(ModBlocks.PERIDOT_CLUSTER);
+        blockItem(ModBlocks.RUBY_CLUSTER);
+        blockItem(ModBlocks.SAPPHIRE_CLUSTER);
+        blockItem(ModBlocks.TOPAZ_CLUSTER);
+        blockItem(ModBlocks.LARGE_AQUAMARINE_BUD);
+        blockItem(ModBlocks.LARGE_CITRINE_BUD);
+        blockItem(ModBlocks.LARGE_GARNET_BUD);
+        blockItem(ModBlocks.LARGE_OPAL_BUD);
+        blockItem(ModBlocks.LARGE_PERIDOT_BUD);
+        blockItem(ModBlocks.LARGE_RUBY_BUD);
+        blockItem(ModBlocks.LARGE_SAPPHIRE_BUD);
+        blockItem(ModBlocks.LARGE_TOPAZ_BUD);
+        blockItem(ModBlocks.MEDIUM_AQUAMARINE_BUD);
+        blockItem(ModBlocks.MEDIUM_CITRINE_BUD);
+        blockItem(ModBlocks.MEDIUM_GARNET_BUD);
+        blockItem(ModBlocks.MEDIUM_OPAL_BUD);
+        blockItem(ModBlocks.MEDIUM_PERIDOT_BUD);
+        blockItem(ModBlocks.MEDIUM_RUBY_BUD);
+        blockItem(ModBlocks.MEDIUM_SAPPHIRE_BUD);
+        blockItem(ModBlocks.MEDIUM_TOPAZ_BUD);
+        blockItem(ModBlocks.SMALL_AQUAMARINE_BUD);
+        blockItem(ModBlocks.SMALL_CITRINE_BUD);
+        blockItem(ModBlocks.SMALL_GARNET_BUD);
+        blockItem(ModBlocks.SMALL_OPAL_BUD);
+        blockItem(ModBlocks.SMALL_PERIDOT_BUD);
+        blockItem(ModBlocks.SMALL_RUBY_BUD);
+        blockItem(ModBlocks.SMALL_SAPPHIRE_BUD);
+        blockItem(ModBlocks.SMALL_TOPAZ_BUD);
+        // SAPLING
+        blockItem(ModBlocks.DAPHNE_SAPLING);
+        // SHARDS
         simpleItem(ModItems.GEODE_WIP);
-        saplingItem(ModBlocks.DAPHNE_SAPLING);
+        simpleItem(ModItems.GEM_WIP);
+        simpleItem(ModItems.AQUAMARINE_SHARD);
+        simpleItem(ModItems.CITRINE_SHARD);
+        simpleItem(ModItems.GARNET_SHARD);
+        simpleItem(ModItems.OPAL_SHARD);
+        simpleItem(ModItems.PERIDOT_SHARD);
+        simpleItem(ModItems.RUBY_SHARD);
+        simpleItem(ModItems.SAPPHIRE_SHARD);
+        simpleItem(ModItems.TOPAZ_SHARD);
     }
 
-    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+    private ItemModelBuilder blockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Battlemage.MOD_ID, "block/" + item.getId().getPath()));
