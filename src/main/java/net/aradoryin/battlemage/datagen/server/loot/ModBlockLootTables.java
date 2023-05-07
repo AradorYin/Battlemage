@@ -26,8 +26,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         // WIP BLOCKS | ORES
         dropSelf(ModBlocks.BLOCK_WIP.get());
-        add(ModBlocks.ORE_WIP.get(), (block) -> createOreDrop(ModBlocks.ORE_WIP.get(), ModItems.GEODE_WIP.get()));
-        add(ModBlocks.DEEPSLATE_ORE_WIP.get(), (block) -> createOreDrop(ModBlocks.DEEPSLATE_ORE_WIP.get(), ModItems.GEODE_WIP.get()));
+        add(ModBlocks.ORE_WIP.get(), block -> createOreDrop(ModBlocks.ORE_WIP.get(), ModItems.GEODE_WIP.get()));
+        add(ModBlocks.DEEPSLATE_ORE_WIP.get(), block -> createOreDrop(ModBlocks.DEEPSLATE_ORE_WIP.get(), ModItems.GEODE_WIP.get()));
         // BLOCKS
         dropSelf(ModBlocks.AQUAMARINE_BLOCK.get());
         add(ModBlocks.BUDDING_AQUAMARINE.get(), noDrop());
@@ -46,7 +46,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.TOPAZ_BLOCK.get());
         add(ModBlocks.BUDDING_TOPAZ.get(), noDrop());
         // CLUSTERS
-        add(ModBlocks.AQUAMARINE_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.AQUAMARINE_CLUSTER.get(),
+        add(ModBlocks.AQUAMARINE_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.AQUAMARINE_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.AQUAMARINE_SHARD.get())
                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -56,7 +56,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.LARGE_AQUAMARINE_BUD.get());
         dropWhenSilkTouch(ModBlocks.MEDIUM_AQUAMARINE_BUD.get());
         dropWhenSilkTouch(ModBlocks.SMALL_AQUAMARINE_BUD.get());
-        add(ModBlocks.CITRINE_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.CITRINE_CLUSTER.get(),
+        add(ModBlocks.CITRINE_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.CITRINE_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.CITRINE_SHARD.get())
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -66,7 +66,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.LARGE_CITRINE_BUD.get());
         dropWhenSilkTouch(ModBlocks.MEDIUM_CITRINE_BUD.get());
         dropWhenSilkTouch(ModBlocks.SMALL_CITRINE_BUD.get());
-        add(ModBlocks.GARNET_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.GARNET_CLUSTER.get(),
+        add(ModBlocks.GARNET_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.GARNET_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.GARNET_SHARD.get())
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -76,7 +76,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.LARGE_GARNET_BUD.get());
         dropWhenSilkTouch(ModBlocks.MEDIUM_GARNET_BUD.get());
         dropWhenSilkTouch(ModBlocks.SMALL_GARNET_BUD.get());
-        add(ModBlocks.OPAL_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.OPAL_CLUSTER.get(),
+        add(ModBlocks.OPAL_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.OPAL_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.OPAL_SHARD.get())
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -86,7 +86,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.LARGE_OPAL_BUD.get());
         dropWhenSilkTouch(ModBlocks.MEDIUM_OPAL_BUD.get());
         dropWhenSilkTouch(ModBlocks.SMALL_OPAL_BUD.get());
-        add(ModBlocks.PERIDOT_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.PERIDOT_CLUSTER.get(),
+        add(ModBlocks.PERIDOT_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.PERIDOT_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.PERIDOT_SHARD.get())
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -96,7 +96,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.LARGE_PERIDOT_BUD.get());
         dropWhenSilkTouch(ModBlocks.MEDIUM_PERIDOT_BUD.get());
         dropWhenSilkTouch(ModBlocks.SMALL_PERIDOT_BUD.get());
-        add(ModBlocks.RUBY_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.RUBY_CLUSTER.get(),
+        add(ModBlocks.RUBY_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.RUBY_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.RUBY_SHARD.get())
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -106,7 +106,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.LARGE_RUBY_BUD.get());
         dropWhenSilkTouch(ModBlocks.MEDIUM_RUBY_BUD.get());
         dropWhenSilkTouch(ModBlocks.SMALL_RUBY_BUD.get());
-        add(ModBlocks.SAPPHIRE_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.SAPPHIRE_CLUSTER.get(),
+        add(ModBlocks.SAPPHIRE_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.SAPPHIRE_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.SAPPHIRE_SHARD.get())
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -116,7 +116,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.LARGE_SAPPHIRE_BUD.get());
         dropWhenSilkTouch(ModBlocks.MEDIUM_SAPPHIRE_BUD.get());
         dropWhenSilkTouch(ModBlocks.SMALL_SAPPHIRE_BUD.get());
-        add(ModBlocks.TOPAZ_CLUSTER.get(), (Block) -> createSilkTouchDispatchTable(ModBlocks.TOPAZ_CLUSTER.get(),
+        add(ModBlocks.TOPAZ_CLUSTER.get(), block -> createSilkTouchDispatchTable(ModBlocks.TOPAZ_CLUSTER.get(),
                 LootItem.lootTableItem(ModItems.TOPAZ_SHARD.get())
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f)))
                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))
@@ -134,7 +134,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.STRIPPED_DAPHNE_WOOD.get());
         dropSelf(ModBlocks.DAPHNE_PLANKS.get());
         dropSelf(ModBlocks.DAPHNE_SAPLING.get());
-        add(ModBlocks.DAPHNE_LEAVES.get(), (block) -> createLeavesDrops(block, ModBlocks.DAPHNE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(ModBlocks.DAPHNE_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.DAPHNE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     @Override

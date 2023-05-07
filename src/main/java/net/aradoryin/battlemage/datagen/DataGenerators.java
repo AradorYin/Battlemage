@@ -23,15 +23,17 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> holderLookup = event.getLookupProvider();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(true, new ModRecipeProvider(packOutput));
-        generator.addProvider(true, ModLootTableProvider.create(packOutput));
-        generator.addProvider(true, new ModBlockStateProvider(packOutput, existingFileHelper));
-        generator.addProvider(true, new ModItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(true, new ModEnUsProvider(packOutput));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModEnUsProvider(packOutput));
         ModBlockTagsProvider blockTags = new ModBlockTagsProvider(packOutput, holderLookup, existingFileHelper);
-        generator.addProvider(true, blockTags);
-        generator.addProvider(true, new ModItemTagsProvider(packOutput, holderLookup, blockTags.contentsGetter(), existingFileHelper));
-        generator.addProvider(true, new ModBiomeTagsProvider(packOutput, holderLookup, existingFileHelper));
+        generator.addProvider(event.includeServer(), blockTags);
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, holderLookup, blockTags.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModBiomeTagsProvider(packOutput, holderLookup, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, holderLookup));
     }
+
+    private DataGenerators () {}
 }

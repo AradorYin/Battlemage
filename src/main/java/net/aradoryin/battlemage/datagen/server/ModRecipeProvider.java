@@ -18,7 +18,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(output);
     }
 
-    // TODO BLOCK_x -> Crafted from SHARD_xX4
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         // BLASTING
@@ -36,25 +35,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // SMOKING
         // STORAGE BLOCKS
         storageBlockRecipe(consumer, ModItems.GEM_WIP.get(), ModBlocks.BLOCK_WIP.get());
+        storageBlockGeodeRecipe(consumer, ModItems.AQUAMARINE_SHARD.get(), ModBlocks.AQUAMARINE_BLOCK.get());
+        storageBlockGeodeRecipe(consumer, ModItems.CITRINE_SHARD.get(), ModBlocks.CITRINE_BLOCK.get());
+        storageBlockGeodeRecipe(consumer, ModItems.GARNET_SHARD.get(), ModBlocks.GARNET_BLOCK.get());
+        storageBlockGeodeRecipe(consumer, ModItems.OPAL_SHARD.get(), ModBlocks.OPAL_BLOCK.get());
+        storageBlockGeodeRecipe(consumer, ModItems.PERIDOT_SHARD.get(), ModBlocks.PERIDOT_BLOCK.get());
+        storageBlockGeodeRecipe(consumer, ModItems.RUBY_SHARD.get(), ModBlocks.RUBY_BLOCK.get());
+        storageBlockGeodeRecipe(consumer, ModItems.TOPAZ_SHARD.get(), ModBlocks.TOPAZ_BLOCK.get());
         // WOOD
         simpleLogToWoodRecipe(consumer, ModBlocks.DAPHNE_LOG.get(), ModBlocks.DAPHNE_WOOD.get(), 3);
         simpleLogToWoodRecipe(consumer, ModBlocks.STRIPPED_DAPHNE_LOG.get(), ModBlocks.STRIPPED_DAPHNE_WOOD.get(), 3);
     }
-    /*
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GEM_WIP.get())
-            .requires(ModBlocks.BLOCK_WIP.get())
-            .unlockedBy("has_block_wip", inventoryTrigger(ItemPredicate.Builder.item()
-                    .of(ModBlocks.BLOCK_WIP.get()).build()))
-            .save(consumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(ModItems.GEM_WIP.get()) + "_x");
-     ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BLOCK_WIP.get())
-            .define('B', ModItems.GEM_WIP.get())
-            .pattern("BBB")
-            .pattern("BBB")
-            .pattern("BBB")
-            .unlockedBy("has_gem_wip", inventoryTrigger(ItemPredicate.Builder.item()
-                    .of(ModItems.GEM_WIP.get()).build()))
-            .save(consumer);
-     */
 
     /**
      * This is a complex recipe method for any Shapeless Crafting in the 2x2 or 3x3 crafting GUI using only 1-4 inputs.
@@ -70,28 +61,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     private void shapelessRecipe(Consumer<FinishedRecipe> recipeConsumer, RecipeCategory recipeCategory, ItemLike output, int outputAmount, ItemLike... inputs)
     {
+        String shapeless = "_shapeless";
         switch (inputs.length)
         {
             case 1:
                 ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0])
                         .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
+                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + shapeless));
                 break;
             case 2:
                 ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1])
                         .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
+                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + shapeless));
                 break;
             case 3:
                 ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2])
                         .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
+                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + shapeless));
                 break;
             case 4:
                 ShapelessRecipeBuilder.shapeless(recipeCategory, output, outputAmount).requires(inputs[0]).requires(inputs[1]).requires(inputs[2]).requires(inputs[3])
                         .unlockedBy("has_" + getItemName(output), inventoryTrigger(ItemPredicate.Builder.item().of(output).build()))
-                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + "_shapeless"));
-            default:
+                        .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(output) + shapeless));
+                break;
+            default: break;
         }
     }
     /**
@@ -165,6 +158,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("iii")
                 .pattern("iii")
                 .pattern("iii")
+                .unlockedBy("has_" + getItemName(input), inventoryTrigger(ItemPredicate.Builder.item().of(input).build()))
+                .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(input) + "_storage_block"));
+    }
+
+    /**
+     * This is a recipe method intended for simple geode Storage Block Recipes.
+     * @param recipeConsumer consumer
+     * @param input ModItems.GEM_WIP.get()
+     * @param output ModBlocks.BLOCK_WIP.get()
+     */
+    private void storageBlockGeodeRecipe(Consumer<FinishedRecipe> recipeConsumer, ItemLike input, ItemLike output)
+    {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, output, 1)
+                .define('i', input)
+                .pattern("ii")
+                .pattern("ii")
                 .unlockedBy("has_" + getItemName(input), inventoryTrigger(ItemPredicate.Builder.item().of(input).build()))
                 .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(input) + "_storage_block"));
     }

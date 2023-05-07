@@ -13,6 +13,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelProvider extends ItemModelProvider {
+    private static final String LAYER_0 = "layer0";
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Battlemage.MOD_ID, existingFileHelper);
     }
@@ -69,17 +70,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     private ItemModelBuilder blockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation("item/generated")).texture(LAYER_0,
                 new ResourceLocation(Battlemage.MOD_ID, "block/" + item.getId().getPath()));
     }
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation("item/generated")).texture(LAYER_0,
                 new ResourceLocation(Battlemage.MOD_ID, "item/" + item.getId().getPath()));
     }
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation("item/handheld")).texture(LAYER_0,
                 new ResourceLocation(Battlemage.MOD_ID, "item/" + item.getId().getPath()));
     }
 }

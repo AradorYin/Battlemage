@@ -25,24 +25,25 @@ public class BuddingCitrineBlock extends CitrineBlock {
         return blockState.isAir() || blockState.is(Blocks.WATER) && blockState.getFluidState().getAmount() == 8;
     }
 
-    public PushReaction getPistonPushReaction(BlockState blockState) {
+    //TODO: If following method doesn't work then readd BlockState blockstate to arguments
+    public PushReaction getPistonPushReaction() {
         return PushReaction.DESTROY;
     }
 
-    public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+    public void randomTick(ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         if (randomSource.nextInt(5) == 0) {
             Direction direction = DIRECTIONS[randomSource.nextInt(DIRECTIONS.length)];
             BlockPos blockpos = blockPos.relative(direction);
             BlockState blockstate = serverLevel.getBlockState(blockpos);
             Block block = null;
             if (canClusterGrowAtState(blockstate)) {
-                block = ModBlocks.SMALL_CITRINE_BUD.get(); // Blocks.SMALL_AMETHYST_BUD;
+                block = ModBlocks.SMALL_CITRINE_BUD.get();
             } else if (blockstate.is(ModBlocks.SMALL_CITRINE_BUD.get()) && blockstate.getValue(AmethystClusterBlock.FACING) == direction) {
-                block = ModBlocks.MEDIUM_CITRINE_BUD.get(); // Blocks.MEDIUM_AMETHYST_BUD;
+                block = ModBlocks.MEDIUM_CITRINE_BUD.get();
             } else if (blockstate.is(ModBlocks.MEDIUM_CITRINE_BUD.get()) && blockstate.getValue(AmethystClusterBlock.FACING) == direction) {
-                block = ModBlocks.LARGE_CITRINE_BUD.get(); // Blocks.LARGE_AMETHYST_BUD;
+                block = ModBlocks.LARGE_CITRINE_BUD.get();
             } else if (blockstate.is(ModBlocks.LARGE_CITRINE_BUD.get()) && blockstate.getValue(AmethystClusterBlock.FACING) == direction) {
-                block = ModBlocks.CITRINE_CLUSTER.get(); // Blocks.AMETHYST_CLUSTER;
+                block = ModBlocks.CITRINE_CLUSTER.get();
             }
 
             if (block != null) {

@@ -32,7 +32,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-//        tag(ItemTags.LOGS);
         tag(MOD_BLOCKS)
                 .add(ModBlocks.BLOCK_WIP.get().asItem());
         tag(MOD_DEEPSLATE_ORES)

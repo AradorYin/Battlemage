@@ -16,6 +16,11 @@ public class SapphireBlock extends Block {
         super(properties);
     }
 
+    /**
+     * @deprecated This method is marked as deprecated for some reason, but both methods in BlockBehaviour are the same.
+     */
+    @Override
+    @Deprecated(forRemoval = false)
     public void onProjectileHit(Level level, BlockState blockState, BlockHitResult blockHitResult, Projectile projectile) {
         if (!level.isClientSide) {
             BlockPos blockpos = blockHitResult.getBlockPos();

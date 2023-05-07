@@ -6,13 +6,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockStateProvider extends BlockStateProvider {
+    private static final String CUBE_COLUMN = "minecraft:block/cube_column";
+    private static final String BLOCK = "block/";
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Battlemage.MOD_ID, exFileHelper);
     }
@@ -74,7 +75,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlockWithItem(ModBlocks.DAPHNE_WOOD.get(), ModBlocks.DAPHNE_LOG.get(), ModBlocks.DAPHNE_LOG.get());
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_DAPHNE_LOG.get(), new ResourceLocation(Battlemage.MOD_ID, "block/stripped_daphne_log"),
                 new ResourceLocation(Battlemage.MOD_ID, "block/stripped_daphne_log_top"));
-        simpleBlockItem(ModBlocks.STRIPPED_DAPHNE_LOG.get(), models().withExistingParent("battlemage:stripped_daphne_log", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.STRIPPED_DAPHNE_LOG.get(), models().withExistingParent("battlemage:stripped_daphne_log", CUBE_COLUMN));
         axisBlockWithItemResourceLocation(ModBlocks.STRIPPED_DAPHNE_WOOD.get(), ModBlocks.STRIPPED_DAPHNE_LOG.get(), ModBlocks.STRIPPED_DAPHNE_LOG.get());
         blockWithItem(ModBlocks.DAPHNE_PLANKS);
         blockWithItem(ModBlocks.DAPHNE_LEAVES);
@@ -90,29 +91,29 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
     private void axisBlockWithItem(Block block, Block blockSide, Block blockEnd) {
         axisBlock((RotatedPillarBlock) block, blockTexture(blockSide), blockTexture(blockEnd));
-        simpleBlockItem(block, models().withExistingParent(Battlemage.MOD_ID + ":" + name(block), "minecraft:block/cube_column"));
+        simpleBlockItem(block, models().withExistingParent(Battlemage.MOD_ID + ":" + blockName(block), CUBE_COLUMN));
     }
     private void axisBlockWithItemResourceLocation(Block block, Block blockSide, Block blockEnd) {
-        axisBlock((RotatedPillarBlock) block, new ResourceLocation(Battlemage.MOD_ID,"block/" + name(blockSide)),
-                new ResourceLocation(Battlemage.MOD_ID, "block/" + name(blockEnd)));
-        simpleBlockItem(block, models().withExistingParent(Battlemage.MOD_ID + ":" + name(block), "minecraft:block/cube_column"));
+        axisBlock((RotatedPillarBlock) block, new ResourceLocation(Battlemage.MOD_ID,BLOCK + blockName(blockSide)),
+                new ResourceLocation(Battlemage.MOD_ID, BLOCK + blockName(blockEnd)));
+        simpleBlockItem(block, models().withExistingParent(Battlemage.MOD_ID + ":" + blockName(block), CUBE_COLUMN));
     }
     private void directionalCrossBlock(Block block){
-        directionalBlock(block, models().withExistingParent(Battlemage.MOD_ID + ":" + name(block), "minecraft:block/cross"));
-        simpleBlockItem(block, models().cross(name(block), new ResourceLocation(Battlemage.MOD_ID, "block/" + name(block))).renderType("cutout"));
+        directionalBlock(block, models().withExistingParent(Battlemage.MOD_ID + ":" + blockName(block), "minecraft:block/cross"));
+        simpleBlockItem(block, models().cross(blockName(block), new ResourceLocation(Battlemage.MOD_ID, BLOCK + blockName(block))).renderType("cutout"));
     }
     private void logBlockWithItem(Block block) {
         logBlock((RotatedPillarBlock) block);
-        simpleBlockItem(block, models().withExistingParent(Battlemage.MOD_ID + ":" + name(block), "minecraft:block/cube_column"));
+        simpleBlockItem(block, models().withExistingParent(Battlemage.MOD_ID + ":" + blockName(block), CUBE_COLUMN));
     }
     private void cutoutBlock(RegistryObject<Block> block) {
         simpleBlock(block.get(), models().cross(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), blockTexture(block.get())).renderType("cutout"));
     }
-    private ResourceLocation key(Block block) {
+    private ResourceLocation blockKey(Block block) {
         return ForgeRegistries.BLOCKS.getKey(block);
     }
 
-    private String name(Block block) {
-        return key(block).getPath();
+    private String blockName(Block block) {
+        return blockKey(block).getPath();
     }
 }
