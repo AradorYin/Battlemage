@@ -11,13 +11,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -30,42 +29,42 @@ public class ModBlocks {
 
     // WIP BLOCKS | ORES
     public static final RegistryObject<Block> BLOCK_WIP = registerBlock("block_wip",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ORE_WIP = registerBlock("ore_wip",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
                     .strength(4f)
                     .requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
     public static final RegistryObject<Block> DEEPSLATE_ORE_WIP = registerBlock("deepslate_ore_wip",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)
                     .strength(6f)
                     .requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
 
     // CLUSTERS
     public static final RegistryObject<Block> AQUAMARINE_CLUSTER = registerBlock("aquamarine_cluster",
-            () -> new AquamarineClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new AquamarineClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> CITRINE_CLUSTER = registerBlock("citrine_cluster",
-            () -> new CitrineClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new CitrineClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> GARNET_CLUSTER = registerBlock("garnet_cluster",
-            () -> new GarnetClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new GarnetClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> OPAL_CLUSTER = registerBlock("opal_cluster",
-            () -> new OpalClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new OpalClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> PERIDOT_CLUSTER = registerBlock("peridot_cluster",
-            () -> new PeridotClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new PeridotClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> RUBY_CLUSTER = registerBlock("ruby_cluster",
-            () -> new RubyClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new RubyClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> SAPPHIRE_CLUSTER = registerBlock("sapphire_cluster",
-            () -> new SapphireClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new SapphireClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> TOPAZ_CLUSTER = registerBlock("topaz_cluster",
-            () -> new TopazClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks()
+            () -> new TopazClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
     public static final RegistryObject<Block> LARGE_AQUAMARINE_BUD = registerBlock("large_aquamarine_bud",
             () -> new AquamarineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD)
@@ -141,75 +140,75 @@ public class ModBlocks {
                     .sound(SoundType.SMALL_AMETHYST_BUD).lightLevel(lightEmission -> 1)));
     // BLOCKS
     public static final RegistryObject<Block> BUDDING_AQUAMARINE = registerBlock("budding_aquamarine",
-            () -> new BuddingRubyBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingRubyBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BUDDING_CITRINE = registerBlock("budding_citrine",
-            () -> new BuddingCitrineBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingCitrineBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BUDDING_GARNET = registerBlock("budding_garnet",
-            () -> new BuddingGarnetBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingGarnetBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BUDDING_OPAL = registerBlock("budding_opal",
-            () -> new BuddingOpalBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingOpalBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BUDDING_PERIDOT = registerBlock("budding_peridot",
-            () -> new BuddingPeridotBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingPeridotBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BUDDING_RUBY = registerBlock("budding_ruby",
-            () -> new BuddingRubyBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingRubyBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BUDDING_SAPPHIRE = registerBlock("budding_sapphire",
-            () -> new BuddingSapphireBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingSapphireBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BUDDING_TOPAZ = registerBlock("budding_topaz",
-            () -> new BuddingTopazBlock(BlockBehaviour.Properties.of(Material.AMETHYST)
+            () -> new BuddingTopazBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> AQUAMARINE_BLOCK = registerBlock("aquamarine_block",
-            () -> new AquamarineBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_CYAN)
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.CYAN)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CITRINE_BLOCK = registerBlock("citrine_block",
-            () -> new CitrineBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_ORANGE)
+            () -> new CitrineBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.ORANGE)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> GARNET_BLOCK = registerBlock("garnet_block",
-            () -> new GarnetBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_MAGENTA)
+            () -> new GarnetBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.MAGENTA)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> OPAL_BLOCK = registerBlock("opal_block",
-            () -> new OpalBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_LIGHT_BLUE)
+            () -> new OpalBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.LIGHT_BLUE)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> PERIDOT_BLOCK = registerBlock("peridot_block",
-            () -> new PeridotBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_LIGHT_GREEN)
+            () -> new PeridotBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.GREEN)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
-            () -> new RubyBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_RED)
+            () -> new RubyBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.RED)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
-            () -> new SapphireBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_BLUE)
+            () -> new SapphireBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.BLUE)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TOPAZ_BLOCK = registerBlock("topaz_block",
-            () -> new TopazBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_YELLOW)
+            () -> new TopazBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.YELLOW)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     // ORES

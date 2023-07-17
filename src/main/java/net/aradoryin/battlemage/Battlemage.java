@@ -5,7 +5,7 @@ import net.aradoryin.battlemage.block.ModBlocks;
 import net.aradoryin.battlemage.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +13,17 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+/*
+TODO Reimplement the gem ores as I would have this be a feature to have either the geodes or the ores. Might have this be 3 options for ores, geodes, both
+TODO Implement the gem_emerald_MATERIAL into the code
+TODO Add the other gem_TYPE_MATERIALS
+TODO Add a Gem Cutter Station or other method to craft the SHARDS
+TODO Update the Daphne Bush to reduce its spawning and make it more bush-like
+TODO Start adding in custom structures (ruins, villager housing, random villages)
+TODO Start adding in custom villagers
+TODO Start adding in custom mobs
+ */
 
 @Mod(Battlemage.MOD_ID)
 public class Battlemage {
@@ -22,12 +33,13 @@ public class Battlemage {
     public Battlemage() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
         // Register the commonSetup
         modEventBus.addListener(this::commonSetup);
-
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -37,8 +49,12 @@ public class Battlemage {
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if(event.getTab() == ModCreativeModeTabs.BATTLEMAGE_TAB) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        /*
+        To add to the existing vanilla tags, use:
+        event.getTabKey() == CreativeModTabs.X;
+         */
+        if(event.getTab() == ModCreativeModeTabs.BATTLEMAGE_TAB.get()) {
             // WIP ITEMS | BLOCKS
             event.accept(ModItems.GEM_WIP);
             event.accept(ModItems.GEODE_WIP);

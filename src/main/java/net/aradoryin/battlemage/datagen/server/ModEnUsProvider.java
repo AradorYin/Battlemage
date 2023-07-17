@@ -16,7 +16,7 @@ public class ModEnUsProvider extends LanguageProvider {
     protected void addTranslations()
     {
         // Creative Tab
-        add(ModCreativeModeTabs.BATTLEMAGE_TAB.getDisplayName().toString(), "Battlemage");
+        add(ModCreativeModeTabs.BATTLEMAGE_TAB.get().getDisplayName().getString(), "Battlemage");
 
         // Items
         // BRACER
@@ -40,7 +40,6 @@ public class ModEnUsProvider extends LanguageProvider {
 //        add(ModItems.ELEMENTAL_PATTERN_NECROMANCY.get(), "Elemental Pattern: Necromancy");
 //        add(ModItems.ELEMENTAL_PATTERN_PHASE.get(), "Elemental Pattern: Phase");
         // SHARDS
-//        add(ModItems.GEM_AMETHYST_UNCUT.get(), "Uncut Amethyst");
         add(ModItems.AQUAMARINE_SHARD.get(), "Aquamarine Shard");
         add(ModItems.CITRINE_SHARD.get(), "Citrine Shard");
         add(ModItems.GARNET_SHARD.get(), "Garnet Shard");
