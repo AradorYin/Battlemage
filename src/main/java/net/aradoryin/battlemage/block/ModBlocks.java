@@ -27,6 +27,9 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Battlemage.MOD_ID);
 
+    /*
+    TODO: Modify the below Blocks to be Examples or remove entirely
+     */
     // WIP BLOCKS | ORES
     public static final RegistryObject<Block> BLOCK_WIP = registerBlock("block_wip",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
@@ -41,6 +44,9 @@ public class ModBlocks {
                     .strength(6f)
                     .requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
 
+    /*
+    TODO: Add in custom Sounds for the various gem clusters
+     */
     // CLUSTERS
     public static final RegistryObject<Block> AQUAMARINE_CLUSTER = registerBlock("aquamarine_cluster",
             () -> new AquamarineClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
@@ -138,7 +144,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> SMALL_TOPAZ_BUD = registerBlock("small_topaz_bud",
             () -> new TopazClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD)
                     .sound(SoundType.SMALL_AMETHYST_BUD).lightLevel(lightEmission -> 1)));
-    // BLOCKS
+
+    /*
+    TODO: Add the Storage Blocks for the Gem Tiers
+     */
+    // BLOCKS -> STORAGE BLOCKS
     public static final RegistryObject<Block> BUDDING_AQUAMARINE = registerBlock("budding_aquamarine",
             () -> new BuddingRubyBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
@@ -211,9 +221,19 @@ public class ModBlocks {
             () -> new TopazBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.YELLOW)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
+
+    /*
+    TODO: Add in the original ore implementation for options on gem generation
+    The original ore block textures are still existing. Either follow the above or delete them.
+     */
     // ORES
 
-    // LOG | WOOD | PLANKS | LEAVES | SAPLING
+    /*
+    TODO: Add in Daphne Bush berries/fruit for use in crafting/alchemy
+    The original idea behind the Daphne Bush was to add in some berries/fruit (maybe leaves as well) to be used in any
+    Crafting or Alchemical processes. No additional implementation has been implemented yet.
+     */
+    // PLANTS -> LOG | WOOD | PLANKS | LEAVES | SAPLING
     public static final RegistryObject<Block> DAPHNE_LOG = registerBlock("daphne_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .strength(5f)));

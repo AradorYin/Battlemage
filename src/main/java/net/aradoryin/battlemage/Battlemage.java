@@ -3,6 +3,7 @@ package net.aradoryin.battlemage;
 import com.mojang.logging.LogUtils;
 import net.aradoryin.battlemage.block.ModBlocks;
 import net.aradoryin.battlemage.item.ModItems;
+import net.aradoryin.battlemage.particles.ModParticles;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -15,11 +16,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 /*
-TODO Reimplement the gem ores as I would have this be a feature to have either the geodes or the ores. Might have this be 3 options for ores, geodes, both
-TODO Implement the gem_emerald_MATERIAL into the code
-TODO Add the other gem_TYPE_MATERIALS
 TODO Add a Gem Cutter Station or other method to craft the SHARDS
-TODO Update the Daphne Bush to reduce its spawning and make it more bush-like
 TODO Start adding in custom structures (ruins, villager housing, random villages)
 TODO Start adding in custom villagers
 TODO Start adding in custom mobs
@@ -37,13 +34,13 @@ public class Battlemage {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModParticles.register(modEventBus);
 
         // Register the commonSetup
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::addCreative);
 
         MinecraftForge.EVENT_BUS.register(this);
-
-        modEventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -55,12 +52,16 @@ public class Battlemage {
         event.getTabKey() == CreativeModTabs.X;
          */
         if(event.getTab() == ModCreativeModeTabs.BATTLEMAGE_TAB.get()) {
+            // ITEMS
+            event.accept(ModItems.BRACER_PATCHWORK);
+
             // WIP ITEMS | BLOCKS
             event.accept(ModItems.GEM_WIP);
             event.accept(ModItems.GEODE_WIP);
             event.accept(ModBlocks.BLOCK_WIP);
             event.accept(ModBlocks.ORE_WIP);
             event.accept(ModBlocks.DEEPSLATE_ORE_WIP);
+
             // WOOD | LOGS | PLANKS | SAPLINGS
             event.accept(ModBlocks.DAPHNE_LOG);
             event.accept(ModBlocks.DAPHNE_WOOD);
@@ -69,7 +70,8 @@ public class Battlemage {
             event.accept(ModBlocks.DAPHNE_PLANKS);
             event.accept(ModBlocks.DAPHNE_SAPLING);
             event.accept(ModBlocks.DAPHNE_LEAVES);
-            // SHARDS
+
+            // GEM SHARDS
             event.accept(ModItems.AQUAMARINE_SHARD);
             event.accept(ModItems.CITRINE_SHARD);
             event.accept(ModItems.GARNET_SHARD);
@@ -78,16 +80,17 @@ public class Battlemage {
             event.accept(ModItems.RUBY_SHARD);
             event.accept(ModItems.SAPPHIRE_SHARD);
             event.accept(ModItems.TOPAZ_SHARD);
-            // GEODE BLOCKS
-            // BUDDING BLOCKS
-            event.accept(ModBlocks.BUDDING_AQUAMARINE);
-            event.accept(ModBlocks.BUDDING_CITRINE);
-            event.accept(ModBlocks.BUDDING_GARNET);
-            event.accept(ModBlocks.BUDDING_OPAL);
-            event.accept(ModBlocks.BUDDING_PERIDOT);
-            event.accept(ModBlocks.BUDDING_RUBY);
-            event.accept(ModBlocks.BUDDING_SAPPHIRE);
-            event.accept(ModBlocks.BUDDING_TOPAZ);
+            // GEM EMERALDS
+            event.accept(ModItems.AMETHYST_EMERALD);
+            event.accept(ModItems.AQUAMARINE_EMERALD);
+            event.accept(ModItems.CITRINE_EMERALD);
+            event.accept(ModItems.GARNET_EMERALD);
+            event.accept(ModItems.OPAL_EMERALD);
+            event.accept(ModItems.PERIDOT_EMERALD);
+            event.accept(ModItems.RUBY_EMERALD);
+            event.accept(ModItems.SAPPHIRE_EMERALD);
+            event.accept(ModItems.TOPAZ_EMERALD);
+
             // STORAGE BLOCKS
             event.accept(ModBlocks.AQUAMARINE_BLOCK);
             event.accept(ModBlocks.CITRINE_BLOCK);
@@ -105,6 +108,17 @@ public class Battlemage {
             event.accept(ModBlocks.RUBY_CLUSTER);
             event.accept(ModBlocks.SAPPHIRE_CLUSTER);
             event.accept(ModBlocks.TOPAZ_CLUSTER);
+
+            // GEODE BLOCKS
+            // BUDDING BLOCKS
+            event.accept(ModBlocks.BUDDING_AQUAMARINE);
+            event.accept(ModBlocks.BUDDING_CITRINE);
+            event.accept(ModBlocks.BUDDING_GARNET);
+            event.accept(ModBlocks.BUDDING_OPAL);
+            event.accept(ModBlocks.BUDDING_PERIDOT);
+            event.accept(ModBlocks.BUDDING_RUBY);
+            event.accept(ModBlocks.BUDDING_SAPPHIRE);
+            event.accept(ModBlocks.BUDDING_TOPAZ);
             // LARGE BUD BLOCKS
             event.accept(ModBlocks.LARGE_AQUAMARINE_BUD);
             event.accept(ModBlocks.LARGE_CITRINE_BUD);

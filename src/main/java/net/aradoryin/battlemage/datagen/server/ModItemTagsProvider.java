@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -21,6 +22,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     public static final TagKey<Item> MOD_BLOCKS = create("mod_blocks");
     public static final TagKey<Item> MOD_DEEPSLATE_ORES = create("mod_deepslate_ores");
     public static final TagKey<Item> MOD_GEMS = create("mod_gems");
+    public static final TagKey<Item> MOD_GEMS_EMERALDS = create("mod_gems_emeralds");
+    public static final TagKey<Item> MOD_GEMS_SHARDS = create("mod_gems_shards");
     public static final TagKey<Item> MOD_LOGS = create("mod_logs");
     public static final TagKey<Item> MOD_LOGS_THAT_BURN = create("mod_logs");
     public static final TagKey<Item> MOD_ORES = create("mod_ores");
@@ -38,6 +41,38 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModBlocks.DEEPSLATE_ORE_WIP.get().asItem());
         tag(MOD_GEMS)
                 .add(ModItems.GEM_WIP.get())
+                // GEM SHARDS
+                .add(ModItems.AQUAMARINE_SHARD.get())
+                .add(ModItems.CITRINE_SHARD.get())
+                .add(ModItems.GARNET_SHARD.get())
+                .add(ModItems.OPAL_SHARD.get())
+                .add(ModItems.PERIDOT_SHARD.get())
+                .add(ModItems.RUBY_SHARD.get())
+                .add(ModItems.SAPPHIRE_SHARD.get())
+                .add(ModItems.TOPAZ_SHARD.get())
+                // GEM EMERALDS
+                .add(ModItems.AMETHYST_EMERALD.get())
+                .add(ModItems.AQUAMARINE_EMERALD.get())
+                .add(ModItems.CITRINE_EMERALD.get())
+                .add(ModItems.GARNET_EMERALD.get())
+                .add(ModItems.OPAL_EMERALD.get())
+                .add(ModItems.PERIDOT_EMERALD.get())
+                .add(ModItems.RUBY_EMERALD.get())
+                .add(ModItems.SAPPHIRE_EMERALD.get())
+                .add(ModItems.TOPAZ_EMERALD.get())
+        ;
+        tag(MOD_GEMS_EMERALDS)
+                .add(ModItems.AMETHYST_EMERALD.get())
+                .add(ModItems.AQUAMARINE_EMERALD.get())
+                .add(ModItems.CITRINE_EMERALD.get())
+                .add(ModItems.GARNET_EMERALD.get())
+                .add(ModItems.OPAL_EMERALD.get())
+                .add(ModItems.PERIDOT_EMERALD.get())
+                .add(ModItems.RUBY_EMERALD.get())
+                .add(ModItems.SAPPHIRE_EMERALD.get())
+                .add(ModItems.TOPAZ_EMERALD.get());
+        tag(MOD_GEMS_SHARDS)
+                .add(Items.AMETHYST_SHARD)
                 .add(ModItems.AQUAMARINE_SHARD.get())
                 .add(ModItems.CITRINE_SHARD.get())
                 .add(ModItems.GARNET_SHARD.get())

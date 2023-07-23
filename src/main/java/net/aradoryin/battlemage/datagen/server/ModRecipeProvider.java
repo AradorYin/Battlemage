@@ -7,8 +7,10 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
@@ -20,6 +22,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        // <----- Standard Method Recipes ----->
         // BLASTING
         simpleBlastingRecipe(consumer, ModBlocks.ORE_WIP.get(), ModItems.GEODE_WIP.get(), 2f, 180);
         simpleBlastingRecipe(consumer, ModBlocks.DEEPSLATE_ORE_WIP.get(), ModItems.GEODE_WIP.get(), 2f, 180);
@@ -35,16 +38,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // SMOKING
         // STORAGE BLOCKS
         storageBlockRecipe(consumer, ModItems.GEM_WIP.get(), ModBlocks.BLOCK_WIP.get());
+        storageBlockRecipe(consumer, ModItems.AQUAMARINE_SHARD.get(), Blocks.PRISMARINE);
         storageBlockGeodeRecipe(consumer, ModItems.AQUAMARINE_SHARD.get(), ModBlocks.AQUAMARINE_BLOCK.get());
         storageBlockGeodeRecipe(consumer, ModItems.CITRINE_SHARD.get(), ModBlocks.CITRINE_BLOCK.get());
         storageBlockGeodeRecipe(consumer, ModItems.GARNET_SHARD.get(), ModBlocks.GARNET_BLOCK.get());
         storageBlockGeodeRecipe(consumer, ModItems.OPAL_SHARD.get(), ModBlocks.OPAL_BLOCK.get());
         storageBlockGeodeRecipe(consumer, ModItems.PERIDOT_SHARD.get(), ModBlocks.PERIDOT_BLOCK.get());
         storageBlockGeodeRecipe(consumer, ModItems.RUBY_SHARD.get(), ModBlocks.RUBY_BLOCK.get());
+        storageBlockGeodeRecipe(consumer, ModItems.SAPPHIRE_SHARD.get(), ModBlocks.SAPPHIRE_BLOCK.get());
         storageBlockGeodeRecipe(consumer, ModItems.TOPAZ_SHARD.get(), ModBlocks.TOPAZ_BLOCK.get());
         // WOOD
         simpleLogToWoodRecipe(consumer, ModBlocks.DAPHNE_LOG.get(), ModBlocks.DAPHNE_WOOD.get(), 3);
         simpleLogToWoodRecipe(consumer, ModBlocks.STRIPPED_DAPHNE_LOG.get(), ModBlocks.STRIPPED_DAPHNE_WOOD.get(), 3);
+
+        // <----- Non-Standard Method Recipes ----->
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.BRACER_PATCHWORK.get(), 1)
+                .define('L', Items.LEATHER)
+                .define('S', Items.STRING)
+                .pattern("SLS")
+                .pattern("L L")
+                .pattern("SLS")
+                .unlockedBy("has_" + Items.LEATHER, inventoryTrigger(ItemPredicate.Builder.item().of(Items.LEATHER).build()))
+                .unlockedBy("has_" + Items.STRING, inventoryTrigger(ItemPredicate.Builder.item().of(Items.STRING).build()))
+                .save(consumer, new ResourceLocation(Battlemage.MOD_ID, "bracer_patchwork"));
+
     }
 
     /**
@@ -175,6 +192,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("ii")
                 .pattern("ii")
                 .unlockedBy("has_" + getItemName(input), inventoryTrigger(ItemPredicate.Builder.item().of(input).build()))
-                .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(input) + "_storage_block"));
+                .save(recipeConsumer, new ResourceLocation(Battlemage.MOD_ID, getItemName(input) + "_geode_storage_block"));
     }
 }

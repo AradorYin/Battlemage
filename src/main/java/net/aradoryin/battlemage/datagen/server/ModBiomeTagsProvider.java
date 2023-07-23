@@ -5,7 +5,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
-import net.minecraft.data.tags.WorldPresetTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
@@ -21,7 +20,8 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider p_256485_) {
+    protected void addTags(HolderLookup.Provider provider) {
+        tag(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS);
     }
 
     private static TagKey<Biome> tag(String name) {

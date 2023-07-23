@@ -20,7 +20,7 @@ public class ModEnUsProvider extends LanguageProvider {
 
         // Items
         // BRACER
-//        add(ModItems.BRACER_INITIAL.get(), "Patchwork Bracer");
+        add(ModItems.BRACER_PATCHWORK.get(), "Patchwork Bracer");
 //        add(ModItems.BRACER_UPGRADE.get(), "Bracer");
 //        add(ModItems.BRACER_MAX.get(), "Bracer");
         // WIP ITEMS
@@ -39,7 +39,7 @@ public class ModEnUsProvider extends LanguageProvider {
 //        add(ModItems.ELEMENTAL_PATTERN_LIGHTNING.get(), "Elemental Pattern: Lightning");
 //        add(ModItems.ELEMENTAL_PATTERN_NECROMANCY.get(), "Elemental Pattern: Necromancy");
 //        add(ModItems.ELEMENTAL_PATTERN_PHASE.get(), "Elemental Pattern: Phase");
-        // SHARDS
+        // GEM SHARDS
         add(ModItems.AQUAMARINE_SHARD.get(), "Aquamarine Shard");
         add(ModItems.CITRINE_SHARD.get(), "Citrine Shard");
         add(ModItems.GARNET_SHARD.get(), "Garnet Shard");
@@ -48,6 +48,16 @@ public class ModEnUsProvider extends LanguageProvider {
         add(ModItems.RUBY_SHARD.get(), "Ruby Shard");
         add(ModItems.SAPPHIRE_SHARD.get(), "Sapphire Shard");
         add(ModItems.TOPAZ_SHARD.get(), "Topaz Shard");
+        // GEM EMERALDS
+        add(ModItems.AMETHYST_EMERALD.get(), "Amethyst Emerald");
+        add(ModItems.AQUAMARINE_EMERALD.get(), "Aquamarine Emerald");
+        add(ModItems.CITRINE_EMERALD.get(), "Citrine Emerald");
+        add(ModItems.GARNET_EMERALD.get(), "Garnet Emerald");
+        add(ModItems.OPAL_EMERALD.get(), "Opal Emerald");
+        add(ModItems.PERIDOT_EMERALD.get(), "Peridot Emerald");
+        add(ModItems.RUBY_EMERALD.get(), "Ruby Emerald");
+        add(ModItems.SAPPHIRE_EMERALD.get(), "Sapphire Emerald");
+        add(ModItems.TOPAZ_EMERALD.get(), "Topaz Emerald");
 
         // Blocks
         // WIP BLOCKS

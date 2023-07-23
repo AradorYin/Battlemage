@@ -55,7 +55,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.SMALL_TOPAZ_BUD);
         // SAPLING
         blockItem(ModBlocks.DAPHNE_SAPLING);
-        // SHARDS
+        // GEM SHARDS
         simpleItem(ModItems.GEODE_WIP);
         simpleItem(ModItems.GEM_WIP);
         simpleItem(ModItems.AQUAMARINE_SHARD);
@@ -66,6 +66,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUBY_SHARD);
         simpleItem(ModItems.SAPPHIRE_SHARD);
         simpleItem(ModItems.TOPAZ_SHARD);
+        // GEM EMERALDS
+        simpleItem(ModItems.AMETHYST_EMERALD);
+        simpleItem(ModItems.AQUAMARINE_EMERALD);
+        simpleItem(ModItems.CITRINE_EMERALD);
+        simpleItem(ModItems.GARNET_EMERALD);
+        simpleItem(ModItems.OPAL_EMERALD);
+        simpleItem(ModItems.PERIDOT_EMERALD);
+        simpleItem(ModItems.RUBY_EMERALD);
+        simpleItem(ModItems.SAPPHIRE_EMERALD);
+        simpleItem(ModItems.TOPAZ_EMERALD);
     }
 
     private ItemModelBuilder blockItem(RegistryObject<Block> item) {
