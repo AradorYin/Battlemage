@@ -8,6 +8,7 @@ public class ShieldParticles extends TextureSheetParticle {
     /*
     TODO: Update the values below to reflect a "Shield"
      */
+
     protected ShieldParticles(ClientLevel clientLevel, double x, double y, double z,
                               SpriteSet spriteSet, double xSpeed, double ySpeed, double zSpeed) {
         super(clientLevel, x, y, z, xSpeed, ySpeed, zSpeed);

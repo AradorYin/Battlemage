@@ -2,95 +2,130 @@ package net.aradoryin.battlemage.datagen.client;
 
 import net.aradoryin.battlemage.Battlemage;
 import net.aradoryin.battlemage.block.ModBlocks;
+import net.aradoryin.battlemage.datagen.helper.ItemModelHelper;
 import net.aradoryin.battlemage.item.ModItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
 
-public class ModItemModelProvider extends ItemModelProvider {
-    private static final String LAYER_0 = "layer0";
+public class ModItemModelProvider extends ItemModelHelper {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Battlemage.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
+        // CRAFTING STATIONS
+        blockItem(ModBlocks.JEWEL_CRAFTING_STATION.get());
+
         // CLUSTERS
-        blockItem(ModBlocks.AQUAMARINE_CLUSTER);
-        blockItem(ModBlocks.CITRINE_CLUSTER);
-        blockItem(ModBlocks.GARNET_CLUSTER);
-        blockItem(ModBlocks.OPAL_CLUSTER);
-        blockItem(ModBlocks.PERIDOT_CLUSTER);
-        blockItem(ModBlocks.RUBY_CLUSTER);
-        blockItem(ModBlocks.SAPPHIRE_CLUSTER);
-        blockItem(ModBlocks.TOPAZ_CLUSTER);
-        blockItem(ModBlocks.LARGE_AQUAMARINE_BUD);
-        blockItem(ModBlocks.LARGE_CITRINE_BUD);
-        blockItem(ModBlocks.LARGE_GARNET_BUD);
-        blockItem(ModBlocks.LARGE_OPAL_BUD);
-        blockItem(ModBlocks.LARGE_PERIDOT_BUD);
-        blockItem(ModBlocks.LARGE_RUBY_BUD);
-        blockItem(ModBlocks.LARGE_SAPPHIRE_BUD);
-        blockItem(ModBlocks.LARGE_TOPAZ_BUD);
-        blockItem(ModBlocks.MEDIUM_AQUAMARINE_BUD);
-        blockItem(ModBlocks.MEDIUM_CITRINE_BUD);
-        blockItem(ModBlocks.MEDIUM_GARNET_BUD);
-        blockItem(ModBlocks.MEDIUM_OPAL_BUD);
-        blockItem(ModBlocks.MEDIUM_PERIDOT_BUD);
-        blockItem(ModBlocks.MEDIUM_RUBY_BUD);
-        blockItem(ModBlocks.MEDIUM_SAPPHIRE_BUD);
-        blockItem(ModBlocks.MEDIUM_TOPAZ_BUD);
-        blockItem(ModBlocks.SMALL_AQUAMARINE_BUD);
-        blockItem(ModBlocks.SMALL_CITRINE_BUD);
-        blockItem(ModBlocks.SMALL_GARNET_BUD);
-        blockItem(ModBlocks.SMALL_OPAL_BUD);
-        blockItem(ModBlocks.SMALL_PERIDOT_BUD);
-        blockItem(ModBlocks.SMALL_RUBY_BUD);
-        blockItem(ModBlocks.SMALL_SAPPHIRE_BUD);
-        blockItem(ModBlocks.SMALL_TOPAZ_BUD);
+        clusterTest(ModBlocks.AQUAMARINE_CLUSTER);
+        clusterTest(ModBlocks.CITRINE_CLUSTER);
+        clusterTest(ModBlocks.GARNET_CLUSTER);
+        clusterTest(ModBlocks.OPAL_CLUSTER);
+        clusterTest(ModBlocks.PERIDOT_CLUSTER);
+        clusterTest(ModBlocks.RUBY_CLUSTER);
+        clusterTest(ModBlocks.SAPPHIRE_CLUSTER);
+        clusterTest(ModBlocks.TOPAZ_CLUSTER);
+        // Large BUDS
+        largeBudTest(ModBlocks.LARGE_AQUAMARINE_BUD);
+        largeBudTest(ModBlocks.LARGE_CITRINE_BUD);
+        largeBudTest(ModBlocks.LARGE_GARNET_BUD);
+        largeBudTest(ModBlocks.LARGE_OPAL_BUD);
+        largeBudTest(ModBlocks.LARGE_PERIDOT_BUD);
+        largeBudTest(ModBlocks.LARGE_RUBY_BUD);
+        largeBudTest(ModBlocks.LARGE_SAPPHIRE_BUD);
+        largeBudTest(ModBlocks.LARGE_TOPAZ_BUD);
+        // MEDIUM BUDS
+        mediumBudTest(ModBlocks.MEDIUM_AQUAMARINE_BUD);
+        mediumBudTest(ModBlocks.MEDIUM_CITRINE_BUD);
+        mediumBudTest(ModBlocks.MEDIUM_GARNET_BUD);
+        mediumBudTest(ModBlocks.MEDIUM_OPAL_BUD);
+        mediumBudTest(ModBlocks.MEDIUM_PERIDOT_BUD);
+        mediumBudTest(ModBlocks.MEDIUM_RUBY_BUD);
+        mediumBudTest(ModBlocks.MEDIUM_SAPPHIRE_BUD);
+        mediumBudTest(ModBlocks.MEDIUM_TOPAZ_BUD);
+        // SMALL BUDS
+        smallBudTest(ModBlocks.SMALL_AQUAMARINE_BUD);
+        smallBudTest(ModBlocks.SMALL_CITRINE_BUD);
+        smallBudTest(ModBlocks.SMALL_GARNET_BUD);
+        smallBudTest(ModBlocks.SMALL_OPAL_BUD);
+        smallBudTest(ModBlocks.SMALL_PERIDOT_BUD);
+        smallBudTest(ModBlocks.SMALL_RUBY_BUD);
+        smallBudTest(ModBlocks.SMALL_SAPPHIRE_BUD);
+        smallBudTest(ModBlocks.SMALL_TOPAZ_BUD);
+
         // SAPLING
         blockItem(ModBlocks.DAPHNE_SAPLING);
-        // GEM SHARDS
-        simpleItem(ModItems.GEODE_WIP);
-        simpleItem(ModItems.GEM_WIP);
-        simpleItem(ModItems.AQUAMARINE_SHARD);
-        simpleItem(ModItems.CITRINE_SHARD);
-        simpleItem(ModItems.GARNET_SHARD);
-        simpleItem(ModItems.OPAL_SHARD);
-        simpleItem(ModItems.PERIDOT_SHARD);
-        simpleItem(ModItems.RUBY_SHARD);
-        simpleItem(ModItems.SAPPHIRE_SHARD);
-        simpleItem(ModItems.TOPAZ_SHARD);
-        // GEM EMERALDS
-        simpleItem(ModItems.AMETHYST_EMERALD);
-        simpleItem(ModItems.AQUAMARINE_EMERALD);
-        simpleItem(ModItems.CITRINE_EMERALD);
-        simpleItem(ModItems.GARNET_EMERALD);
-        simpleItem(ModItems.OPAL_EMERALD);
-        simpleItem(ModItems.PERIDOT_EMERALD);
-        simpleItem(ModItems.RUBY_EMERALD);
-        simpleItem(ModItems.SAPPHIRE_EMERALD);
-        simpleItem(ModItems.TOPAZ_EMERALD);
-    }
 
-    private ItemModelBuilder blockItem(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture(LAYER_0,
-                new ResourceLocation(Battlemage.MOD_ID, "block/" + item.getId().getPath()));
-    }
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture(LAYER_0,
-                new ResourceLocation(Battlemage.MOD_ID, "item/" + item.getId().getPath()));
-    }
-    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/handheld")).texture(LAYER_0,
-                new ResourceLocation(Battlemage.MOD_ID, "item/" + item.getId().getPath()));
+        // GEM EMERALDS
+        gemEmeraldTest(ModItems.WIP_EMERALD);
+        gemEmeraldTest(ModItems.AMETHYST_EMERALD);
+        gemEmeraldTest(ModItems.AQUAMARINE_EMERALD);
+        gemEmeraldTest(ModItems.CITRINE_EMERALD);
+        gemEmeraldTest(ModItems.GARNET_EMERALD);
+        gemEmeraldTest(ModItems.OPAL_EMERALD);
+        gemEmeraldTest(ModItems.PERIDOT_EMERALD);
+        gemEmeraldTest(ModItems.RUBY_EMERALD);
+        gemEmeraldTest(ModItems.SAPPHIRE_EMERALD);
+        gemEmeraldTest(ModItems.TOPAZ_EMERALD);
+
+        // GEM FACETED
+        gemFacetedTest(ModItems.WIP_FACETED);
+        gemFacetedTest(ModItems.AMETHYST_FACETED);
+        gemFacetedTest(ModItems.AQUAMARINE_FACETED);
+        gemFacetedTest(ModItems.CITRINE_FACETED);
+        gemFacetedTest(ModItems.GARNET_FACETED);
+        gemFacetedTest(ModItems.OPAL_FACETED);
+        gemFacetedTest(ModItems.PERIDOT_FACETED);
+        gemFacetedTest(ModItems.RUBY_FACETED);
+        gemFacetedTest(ModItems.SAPPHIRE_FACETED);
+        gemFacetedTest(ModItems.TOPAZ_FACETED);
+
+        // GEM GEODE
+        gemGeodeTest(ModItems.WIP_GEODE);
+        gemGeodeTest(ModItems.AMETHYST_GEODE);
+        gemGeodeTest(ModItems.AQUAMARINE_GEODE);
+        gemGeodeTest(ModItems.CITRINE_GEODE);
+        gemGeodeTest(ModItems.GARNET_GEODE);
+        gemGeodeTest(ModItems.OPAL_GEODE);
+        gemGeodeTest(ModItems.PERIDOT_GEODE);
+        gemGeodeTest(ModItems.RUBY_GEODE);
+        gemGeodeTest(ModItems.SAPPHIRE_GEODE);
+        gemGeodeTest(ModItems.TOPAZ_GEODE);
+
+        // GEM PEAR
+        gemPearTest(ModItems.WIP_PEAR);
+        gemPearTest(ModItems.AMETHYST_PEAR);
+        gemPearTest(ModItems.AQUAMARINE_PEAR);
+        gemPearTest(ModItems.CITRINE_PEAR);
+        gemPearTest(ModItems.GARNET_PEAR);
+        gemPearTest(ModItems.OPAL_PEAR);
+        gemPearTest(ModItems.PERIDOT_PEAR);
+        gemPearTest(ModItems.RUBY_PEAR);
+        gemPearTest(ModItems.SAPPHIRE_PEAR);
+        gemPearTest(ModItems.TOPAZ_PEAR);
+
+        // GEM SHARDS
+        gemShardTest(ModItems.WIP_SHARD);
+        gemShardTest(ModItems.AQUAMARINE_SHARD);
+        gemShardTest(ModItems.CITRINE_SHARD);
+        gemShardTest(ModItems.GARNET_SHARD);
+        gemShardTest(ModItems.OPAL_SHARD);
+        gemShardTest(ModItems.PERIDOT_SHARD);
+        gemShardTest(ModItems.RUBY_SHARD);
+        gemShardTest(ModItems.SAPPHIRE_SHARD);
+        gemShardTest(ModItems.TOPAZ_SHARD);
+
+        // GEM TRILLION
+        gemTrillionTest(ModItems.WIP_TRILLION);
+        gemTrillionTest(ModItems.AMETHYST_TRILLION);
+        gemTrillionTest(ModItems.AQUAMARINE_TRILLION);
+        gemTrillionTest(ModItems.CITRINE_TRILLION);
+        gemTrillionTest(ModItems.GARNET_TRILLION);
+        gemTrillionTest(ModItems.OPAL_TRILLION);
+        gemTrillionTest(ModItems.PERIDOT_TRILLION);
+        gemTrillionTest(ModItems.RUBY_TRILLION);
+        gemTrillionTest(ModItems.SAPPHIRE_TRILLION);
+        gemTrillionTest(ModItems.TOPAZ_TRILLION);
     }
 }

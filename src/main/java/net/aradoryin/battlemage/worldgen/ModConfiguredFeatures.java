@@ -185,8 +185,8 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.DAPHNE_LOG.get()),
                 new StraightTrunkPlacer(1, 0, 0), // Base Height, Rand Height A, Rand Height B
                 BlockStateProvider.simple(ModBlocks.DAPHNE_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), // Radius, Offset, Height
-                new TwoLayersFeatureSize(2, 2, 1)).build()); // Limit, LowerSize, UpperSize
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 1), // Radius, Offset, Height
+                new TwoLayersFeatureSize(3, 3, 2)).build()); // Limit, LowerSize, UpperSize
 
 //        register(context, OVERWORLD_WIP_ORE_KEY, Feature.ORE, new OreConfiguration(overworldWIPOres, 16)); // VeinSize | Discard chance on air exposure
     }

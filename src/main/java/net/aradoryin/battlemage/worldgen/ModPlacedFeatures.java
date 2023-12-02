@@ -33,36 +33,36 @@ public class ModPlacedFeatures {
 
         // GEODE
         register(context, AQUAMARINE_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.AQUAMARINE_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         register(context, CITRINE_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CITRINE_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         register(context, GARNET_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GARNET_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         register(context, OPAL_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OPAL_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         register(context, PERIDOT_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PERIDOT_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         register(context, RUBY_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         register(context, SAPPHIRE_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SAPPHIRE_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         register(context, TOPAZ_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TOPAZ_GEODE_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                List.of(RarityFilter.onAverageOnceEvery(65), InSquarePlacement.spread(),
+                        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(45)),
                         BiomeFilter.biome()));
         // TREES | PLANTS
         register(context, DAPHNE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DAPHNE_KEY),

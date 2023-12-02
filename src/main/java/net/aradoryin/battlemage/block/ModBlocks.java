@@ -1,10 +1,11 @@
 package net.aradoryin.battlemage.block;
 
 import net.aradoryin.battlemage.Battlemage;
-import net.aradoryin.battlemage.block.custom.block.*;
-import net.aradoryin.battlemage.block.custom.buddingblock.*;
+import net.aradoryin.battlemage.block.custom.JewelCraftingStationBlock;
 import net.aradoryin.battlemage.block.custom.ModFlammableRotatedPillarBlock;
-import net.aradoryin.battlemage.block.custom.cluster.*;
+import net.aradoryin.battlemage.block.custom.geodes.buddingblock.*;
+import net.aradoryin.battlemage.block.custom.geodes.cluster.*;
+import net.aradoryin.battlemage.block.custom.geodes.geodeclusterblock.*;
 import net.aradoryin.battlemage.item.ModItems;
 import net.aradoryin.battlemage.worldgen.tree.DaphneTreeGrower;
 import net.minecraft.core.BlockPos;
@@ -24,17 +25,56 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+/*
+TODO: The Overlay variants will be the initial block variant 
+ */
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Battlemage.MOD_ID);
 
+    // CRAFTING STATIONS
+    public static final RegistryObject<Block> JEWEL_CRAFTING_STATION = registerBlock("jewel_crafting_station",
+            ()-> new JewelCraftingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
     /*
-    TODO: Modify the below Blocks to be Examples or remove entirely
+    The below Blocks(s) are to be used as examples or placeholders in the event of Image Load Failure.
      */
-    // WIP BLOCKS | ORES
-    public static final RegistryObject<Block> BLOCK_WIP = registerBlock("block_wip",
+    public static final RegistryObject<Block> WIP_BLOCK = registerBlock("block_wip",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(5f)
                     .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WIP_EMERALD_BLOCK = registerBlock("emerald_wip_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WIP_FACETED_BLOCK = registerBlock("faceted_wip_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WIP_PEAR_BLOCK = registerBlock("pear_wip_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WIP_TRILLION_BLOCK = registerBlock("trillion_wip_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BUDDING_WIP = registerBlock("budding_wip",
+            () -> new BuddingRubyBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
+                    .randomTicks()
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> WIP_CLUSTER = registerBlock("wip_cluster",
+            () -> new AquamarineClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
+                    .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
+    public static final RegistryObject<Block> LARGE_WIP_BUD = registerBlock("large_wip_bud",
+            () -> new AquamarineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD)
+                    .sound(SoundType.LARGE_AMETHYST_BUD).lightLevel(lightEmission -> 4)));
+    public static final RegistryObject<Block> MEDIUM_WIP_BUD = registerBlock("medium_wip_bud",
+            () -> new AquamarineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD)
+                    .sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel(lightEmission -> 2)));
+    public static final RegistryObject<Block> SMALL_WIP_BUD = registerBlock("small_wip_bud",
+            () -> new AquamarineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD)
+                    .sound(SoundType.SMALL_AMETHYST_BUD).lightLevel(lightEmission -> 1)));
     public static final RegistryObject<Block> ORE_WIP = registerBlock("ore_wip",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)
                     .strength(4f)
@@ -72,6 +112,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> TOPAZ_CLUSTER = registerBlock("topaz_cluster",
             () -> new TopazClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).noOcclusion().randomTicks()
                     .sound(SoundType.AMETHYST_CLUSTER).lightLevel(lightEmission -> 5)));
+
+    // LARGE BUDS
     public static final RegistryObject<Block> LARGE_AQUAMARINE_BUD = registerBlock("large_aquamarine_bud",
             () -> new AquamarineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD)
                     .sound(SoundType.LARGE_AMETHYST_BUD).lightLevel(lightEmission -> 4)));
@@ -96,6 +138,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> LARGE_TOPAZ_BUD = registerBlock("large_topaz_bud",
             () -> new TopazClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD)
                     .sound(SoundType.LARGE_AMETHYST_BUD).lightLevel(lightEmission -> 4)));
+
+    // MEDIUM BUDS
     public static final RegistryObject<Block> MEDIUM_AQUAMARINE_BUD = registerBlock("medium_aquamarine_bud",
             () -> new AquamarineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD)
                     .sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel(lightEmission -> 2)));
@@ -120,6 +164,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> MEDIUM_TOPAZ_BUD = registerBlock("medium_topaz_bud",
             () -> new TopazClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD)
                     .sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel(lightEmission -> 2)));
+
+    // SMALL BUDS
     public static final RegistryObject<Block> SMALL_AQUAMARINE_BUD = registerBlock("small_aquamarine_bud",
             () -> new AquamarineClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD)
                     .sound(SoundType.SMALL_AMETHYST_BUD).lightLevel(lightEmission -> 1)));
@@ -145,10 +191,7 @@ public class ModBlocks {
             () -> new TopazClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD)
                     .sound(SoundType.SMALL_AMETHYST_BUD).lightLevel(lightEmission -> 1)));
 
-    /*
-    TODO: Add the Storage Blocks for the Gem Tiers
-     */
-    // BLOCKS -> STORAGE BLOCKS
+    // BUDDING BLOCKS
     public static final RegistryObject<Block> BUDDING_AQUAMARINE = registerBlock("budding_aquamarine",
             () -> new BuddingRubyBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)
                     .randomTicks()
@@ -189,36 +232,277 @@ public class ModBlocks {
                     .randomTicks()
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
+
+
+    // STORAGE BLOCK
     public static final RegistryObject<Block> AQUAMARINE_BLOCK = registerBlock("aquamarine_block",
-            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.CYAN)
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CITRINE_BLOCK = registerBlock("citrine_block",
-            () -> new CitrineBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.ORANGE)
+            () -> new CitrineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.ORANGE)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> GARNET_BLOCK = registerBlock("garnet_block",
-            () -> new GarnetBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.MAGENTA)
+            () -> new GarnetBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.MAGENTA)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> OPAL_BLOCK = registerBlock("opal_block",
-            () -> new OpalBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.LIGHT_BLUE)
+            () -> new OpalBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.LIGHT_BLUE)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> PERIDOT_BLOCK = registerBlock("peridot_block",
-            () -> new PeridotBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.GREEN)
+            () -> new PeridotBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.GREEN)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
-            () -> new RubyBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.RED)
+            () -> new RubyBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.RED)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
-            () -> new SapphireBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.BLUE)
+            () -> new SapphireBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.BLUE)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TOPAZ_BLOCK = registerBlock("topaz_block",
-            () -> new TopazBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST).mapColor(DyeColor.YELLOW)
+            () -> new TopazBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.YELLOW)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+
+    // EMERALD STORAGE BLOCKS
+    public static final RegistryObject<Block> AMETHYST_EMERALD_BLOCK = registerBlock("emerald_amethyst_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AQUAMARINE_EMERALD_BLOCK = registerBlock("emerald_aquamarine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CITRINE_EMERALD_BLOCK = registerBlock("emerald_citrine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> GARNET_EMERALD_BLOCK = registerBlock("emerald_garnet_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> OPAL_EMERALD_BLOCK = registerBlock("emerald_opal_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PERIDOT_EMERALD_BLOCK = registerBlock("emerald_peridot_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RUBY_EMERALD_BLOCK = registerBlock("emerald_ruby_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SAPPHIRE_EMERALD_BLOCK = registerBlock("emerald_sapphire_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TOPAZ_EMERALD_BLOCK = registerBlock("emerald_topaz_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+
+    // FACETED STORAGE BLOCK
+    public static final RegistryObject<Block> AMETHYST_FACETED_BLOCK = registerBlock("faceted_amethyst_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AQUAMARINE_FACETED_BLOCK = registerBlock("faceted_aquamarine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CITRINE_FACETED_BLOCK = registerBlock("faceted_citrine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> GARNET_FACETED_BLOCK = registerBlock("faceted_garnet_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> OPAL_FACETED_BLOCK = registerBlock("faceted_opal_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PERIDOT_FACETED_BLOCK = registerBlock("faceted_peridot_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RUBY_FACETED_BLOCK = registerBlock("faceted_ruby_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SAPPHIRE_FACETED_BLOCK = registerBlock("faceted_sapphire_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TOPAZ_FACETED_BLOCK = registerBlock("faceted_topaz_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+
+    // PEAR STORAGE BLOCK
+    public static final RegistryObject<Block> AMETHYST_PEAR_BLOCK = registerBlock("pear_amethyst_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AQUAMARINE_PEAR_BLOCK = registerBlock("pear_aquamarine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CITRINE_PEAR_BLOCK = registerBlock("pear_citrine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> GARNET_PEAR_BLOCK = registerBlock("pear_garnet_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> OPAL_PEAR_BLOCK = registerBlock("pear_opal_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PERIDOT_PEAR_BLOCK = registerBlock("pear_peridot_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RUBY_PEAR_BLOCK = registerBlock("pear_ruby_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SAPPHIRE_PEAR_BLOCK = registerBlock("pear_sapphire_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TOPAZ_PEAR_BLOCK = registerBlock("pear_topaz_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+
+    // TRILLION STORAGE BLOCK
+    public static final RegistryObject<Block> AMETHYST_TRILLION_BLOCK = registerBlock("trillion_amethyst_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AQUAMARINE_TRILLION_BLOCK = registerBlock("trillion_aquamarine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CITRINE_TRILLION_BLOCK = registerBlock("trillion_citrine_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> GARNET_TRILLION_BLOCK = registerBlock("trillion_garnet_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> OPAL_TRILLION_BLOCK = registerBlock("trillion_opal_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PERIDOT_TRILLION_BLOCK = registerBlock("trillion_peridot_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RUBY_TRILLION_BLOCK = registerBlock("trillion_ruby_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SAPPHIRE_TRILLION_BLOCK = registerBlock("trillion_sapphire_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TOPAZ_TRILLION_BLOCK = registerBlock("trillion_topaz_block",
+            () -> new AquamarineBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(DyeColor.CYAN)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+
+    // STONES
+    public static final RegistryObject<Block> ETHERIC_STONE = registerBlock("etheric_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_COBBLESTONE_DF = registerBlock("blasted_cobblestone_difference",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_COBBLESTONE_HL = registerBlock("blasted_cobblestone_hardlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_COBBLESTONE_OL = registerBlock("blasted_cobblestone_overlay",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_COBBLESTONE_SL = registerBlock("blasted_cobblestone_softlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_COBBLESTONE_ST = registerBlock("blasted_cobblestone_subtract",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_CRACKED_STONE_BRICKS_DF = registerBlock("blasted_cracked_stone_bricks_difference",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_CRACKED_STONE_BRICKS_HL = registerBlock("blasted_cracked_stone_bricks_hardlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_CRACKED_STONE_BRICKS_OL = registerBlock("blasted_cracked_stone_bricks_overlay",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_CRACKED_STONE_BRICKS_SL = registerBlock("blasted_cracked_stone_bricks_softlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_CRACKED_STONE_BRICKS_ST = registerBlock("blasted_cracked_stone_bricks_subtract",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_BRICKS_DF = registerBlock("blasted_stone_bricks_difference",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_BRICKS_HL = registerBlock("blasted_stone_bricks_hardlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_BRICKS_OL = registerBlock("blasted_stone_bricks_overlay",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_BRICKS_SL = registerBlock("blasted_stone_bricks_softlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_BRICKS_ST = registerBlock("blasted_stone_bricks_subtract",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_DF = registerBlock("blasted_stone_difference",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_HL = registerBlock("blasted_stone_hardlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_OL = registerBlock("blasted_stone_overlay",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_SL = registerBlock("blasted_stone_softlight",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
+                    .strength(1.5f)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> BLASTED_STONE_ST = registerBlock("blasted_stone_subtract",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(DyeColor.GRAY)
                     .strength(1.5f)
                     .requiresCorrectToolForDrops()));
 
